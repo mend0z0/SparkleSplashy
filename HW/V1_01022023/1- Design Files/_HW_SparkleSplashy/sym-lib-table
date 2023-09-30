@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "_SCHLIB_SparkleSplashy")(type "KiCad")(uri "${KIPRJMOD}/_SCHLIB_SparkleSplashy.kicad_sym")(options "")(descr ""))
+)

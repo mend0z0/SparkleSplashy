@@ -1,0 +1,3854 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 69638034-c5ad-4fb6-b77a-0298ff3f1a6a)
+
+  (paper "B")
+
+  (title_block
+    (title "SparkleSplashy")
+    (date "2023-04-25")
+    (company "Siavash Taher Parvar")
+    (comment 1 "Siavash Taher Parvar")
+    (comment 2 "Siavash Taher Parvar")
+    (comment 3 "Siavash Taher Parvar")
+    (comment 4 "_BOM_SpSp_V1.xlsx")
+    (comment 5 "_ASM_SpSp_V1.html")
+    (comment 6 "_GERBER_JLCPCB042023.zip")
+    (comment 8 "No Variant")
+    (comment 9 "N/A")
+  )
+
+  (lib_symbols
+    (symbol "_SCHLIB_SparkleSplashy:BUFF_SN74LVC2G17DRYR" (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 2.54 3.81 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Value" "SN74LVC2G17DRYR" (at 2.54 6.35 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Footprint" "_PCBLIB_SparkleSplashy:6-SON" (at 2.54 16.51 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc2g17" (at 2.54 11.43 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Description" "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output 6-SON (1.45x1)" (at 2.54 8.89 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Part Number" "SN74LVC2G17DRYR" (at 2.54 19.05 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/texas-instruments/SN74LVC2G17DRYR/3587226" (at 2.54 13.97 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "SCH CHECK" "CHECK" (at 2.54 21.59 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "SN74LVC2G17DRYR" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output 6-SON (1.45x1)" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "BUFF_SN74LVC2G17DRYR_1_1"
+        (polyline
+          (pts
+            (xy 0 -11.43)
+            (xy 10.16 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.064 -2.54)
+            (xy 2.794 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.191 -4.953)
+            (xy 2.921 -4.953)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.842 -2.54)
+            (xy 7.112 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.969 -4.953)
+            (xy 7.239 -4.953)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.826 -2.921)
+            (xy 5.334 -2.921)
+            (xy 5.334 -1.905)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.207 -4.572)
+            (xy 4.699 -4.572)
+            (xy 4.699 -5.588)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.191 -6.477)
+            (xy 5.969 -4.953)
+            (xy 4.191 -3.556)
+            (xy 4.191 -6.477)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.445 -5.588)
+            (xy 4.953 -5.588)
+            (xy 4.953 -4.572)
+            (xy 5.207 -4.572)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.588 -1.905)
+            (xy 5.08 -1.905)
+            (xy 5.08 -2.921)
+            (xy 4.826 -2.921)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.842 -1.016)
+            (xy 4.064 -2.54)
+            (xy 5.842 -3.937)
+            (xy 5.842 -1.016)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 0 0) (end 10.16 -16.51)
+          (stroke (width 0) (type default))
+          (fill (type background))
+        )
+        (text "6-SON (1.45x1)" (at 5.08 -15.24 0)
+          (effects (font (size 0.762 0.762)))
+        )
+        (text "NON-INVERTING" (at 5.08 -13.97 0)
+          (effects (font (size 0.762 0.762)))
+        )
+        (text "SN74LVC2G17DRYR" (at 5.08 -12.7 0)
+          (effects (font (size 0.635 0.635)))
+        )
+        (pin passive line (at 15.24 -2.54 180) (length 5.08)
+          (name "1A" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -10.16 0) (length 5.08)
+          (name "GND" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -5.08 0) (length 5.08)
+          (name "2A" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 15.24 -5.08 180) (length 5.08)
+          (name "2Y" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -7.62 0) (length 5.08)
+          (name "VCC" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 5.08)
+          (name "1Y" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
+        )
+      )
+      (symbol "BUFF_SN74LVC2G17DRYR_2_1"
+        (polyline
+          (pts
+            (xy 5.08 -11.43)
+            (xy 15.24 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.398 -4.953)
+            (xy 8.128 -4.953)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.398 -2.413)
+            (xy 8.128 -2.413)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 11.176 -4.953)
+            (xy 12.192 -4.953)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 11.176 -2.413)
+            (xy 12.192 -2.413)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.287 -4.572)
+            (xy 9.779 -4.572)
+            (xy 9.779 -5.588)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.287 -2.032)
+            (xy 9.779 -2.032)
+            (xy 9.779 -3.048)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.398 -6.223)
+            (xy 11.176 -4.953)
+            (xy 9.398 -3.81)
+            (xy 9.398 -6.223)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.398 -3.683)
+            (xy 11.176 -2.413)
+            (xy 9.398 -1.27)
+            (xy 9.398 -3.683)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.525 -5.588)
+            (xy 10.033 -5.588)
+            (xy 10.033 -4.572)
+            (xy 10.287 -4.572)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.525 -3.048)
+            (xy 10.033 -3.048)
+            (xy 10.033 -2.032)
+            (xy 10.287 -2.032)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 5.08 0) (end 15.24 -16.51)
+          (stroke (width 0) (type default))
+          (fill (type background))
+        )
+        (text "6-SON (1.45x1)" (at 10.16 -15.24 0)
+          (effects (font (size 0.762 0.762)))
+        )
+        (text "NON-INVERTING" (at 10.16 -13.97 0)
+          (effects (font (size 0.762 0.762)))
+        )
+        (text "SN74LVC2G17DRYR" (at 10.16 -12.7 0)
+          (effects (font (size 0.635 0.635)))
+        )
+        (pin passive line (at 0 -2.54 0) (length 5.08)
+          (name "1A" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 -10.16 0) (length 5.08)
+          (name "GND" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 -5.08 0) (length 5.08)
+          (name "2A" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 20.32 -5.08 180) (length 5.08)
+          (name "2Y" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 -7.62 0) (length 5.08)
+          (name "VCC" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 20.32 -2.54 180) (length 5.08)
+          (name "1Y" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:CAP_2u2F/6V3" (in_bom yes) (on_board yes)
+      (property "Reference" "C" (at 2.54 3.81 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "2u2F/6V3" (at 6.35 6.35 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Capacitor_SMD:C_0201_0603Metric" (at 19.05 17.78 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://ele.kyocera.com/assets/products/capacitor/CM_Series_e.pdf" (at 36.83 12.7 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "2.2 µF ±20% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)" (at 33.02 15.24 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "CM03X5R225M06AH" (at 11.43 20.32 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/kyocera-avx/CM03X5R225M06AH/10815044" (at 45.72 10.16 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 6.35 25.4 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "C0201" (at 5.08 22.86 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "CM03X5R225M06AH" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "2.2 µF ±20% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "CAP_2u2F/6V3_0_0"
+        (polyline
+          (pts
+            (xy 5.08 1.27)
+            (xy 5.08 -1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 7.62 1.27)
+            (xy 7.62 -1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "CAP_2u2F/6V3_1_1"
+        (pin passive line (at 0 0 0) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 12.7 0 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:CONN_BD080-03-A-0230-L-G" (in_bom no) (on_board yes)
+      (property "Reference" "J" (at 3.81 3.81 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Value" "FHDR_3POS_1.27MM" (at 3.81 6.35 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical" (at 3.81 16.51 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Datasheet" "https://gct.co/files/specs/1.27mm-socket-spec.pdf" (at 3.81 13.97 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Description" "3 Position Receptacle Connector 0.050\" (1.27mm) Through Hole Gold" (at 3.81 8.89 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Part Number" "BD080-03-A-0230-L-G" (at 3.81 19.05 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/gct/BD080-03-A-0230-L-G/13901350" (at 3.81 11.43 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 3.81 21.59 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "ki_keywords" "BD080-03-A-0230-L-G" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "3 Position Receptacle Connector 0.050\" (1.27mm) Through Hole Gold" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "CONN_BD080-03-A-0230-L-G_0_0"
+        (text "FHDR, 3POS" (at 2.54 -5.08 900)
+          (effects (font (size 1.016 1.016)))
+        )
+        (text "P1.27MM VERT" (at 5.08 -5.08 900)
+          (effects (font (size 0.889 0.889)))
+        )
+      )
+      (symbol "CONN_BD080-03-A-0230-L-G_0_1"
+        (rectangle (start 0 0) (end 6.35 -10.16)
+          (stroke (width 0) (type default))
+          (fill (type background))
+        )
+      )
+      (symbol "CONN_BD080-03-A-0230-L-G_1_1"
+        (pin passive line (at 11.43 -2.54 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 11.43 -5.08 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 11.43 -7.62 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:FUSE_0805L010/24YR" (in_bom yes) (on_board yes)
+      (property "Reference" "F" (at 2.54 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "0805L010{slash}24YR" (at 10.16 7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Fuse:Fuse_0805_2012Metric" (at 15.24 17.78 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_0805l_datasheet.pdf.pdf" (at 58.42 12.7 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "Polymeric PTC Resettable Fuse 24V 100 mA Ih Surface Mount 0805 (2012 Metric), Concave" (at 45.72 10.16 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "0805L010/24YR" (at 10.16 20.32 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/littelfuse-inc/0805L010-24YR/4556346" (at 43.18 15.24 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 6.35 22.86 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Ihold" "100 mA" (at 6.35 25.4 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Voltage Rated" "24 V" (at 5.08 30.48 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "F0805" (at 6.35 27.94 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "0805L010/24YR" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Polymeric PTC Resettable Fuse 24V 100 mA Ih Surface Mount 0805 (2012 Metric), Concave" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "FUSE_0805L010/24YR_0_1"
+        (polyline
+          (pts
+            (xy 5.08 0)
+            (xy 7.62 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.08 0.635)
+            (xy 7.62 0.635)
+            (xy 7.62 -0.635)
+            (xy 5.08 -0.635)
+            (xy 5.08 0.635)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "FUSE_0805L010/24YR_1_1"
+        (pin passive line (at 0 0 0) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 12.7 0 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:IC_VO207AT" (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 2.54 2.54 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Value" "VO207AT" (at 2.54 5.08 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 2.54 15.24 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Datasheet" "https://www.vishay.com/docs/81957/vo205at.pdf" (at 2.54 12.7 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Description" "Optoisolator Transistor with Base Output 4000Vrms 1 Channel 8-SOIC" (at 2.54 10.16 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Part Number" "VO207AT" (at 2.54 17.78 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/vishay-semiconductor-opto-division/VO207AT/4073985" (at 2.54 7.62 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "SCH CHECK" "*" (at 2.54 20.32 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "ki_keywords" "VO207AT" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Optoisolator Transistor with Base Output 4000Vrms 1 Channel 8-SOIC" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "IC_VO207AT_0_0"
+        (polyline
+          (pts
+            (xy 3.302 -4.064)
+            (xy 4.318 -4.064)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.9276 -4.5212)
+            (xy 4.6736 -4.318)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.1054 -4.064)
+            (xy 4.8514 -3.8354)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.35 -10.16)
+            (xy 6.35 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.35 -7.62)
+            (xy 6.35 -8.89)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.35 -5.08)
+            (xy 6.35 -6.35)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.35 -2.54)
+            (xy 6.35 -3.81)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.35 0)
+            (xy 6.35 -1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 8.89 -7.366)
+            (xy 8.89 -10.414)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 2.54 -2.54)
+            (xy 3.81 -2.54)
+            (xy 3.81 -3.81)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 3.81 -4.064)
+            (xy 3.81 -4.826)
+            (xy 2.54 -4.826)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.318 -3.302)
+            (xy 3.302 -3.302)
+            (xy 3.81 -4.064)
+            (xy 4.318 -3.302)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 5.0546 -4.445)
+            (xy 4.8768 -4.6482)
+            (xy 5.1054 -4.6736)
+            (xy 5.0546 -4.445)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.2324 -4.0132)
+            (xy 5.0546 -4.2164)
+            (xy 5.2832 -4.2418)
+            (xy 5.2324 -4.0132)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 8.89 -8.89)
+            (xy 7.874 -8.89)
+            (xy 7.874 -4.826)
+            (xy 10.922 -4.826)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.906 -9.652)
+            (xy 9.652 -10.16)
+            (xy 10.16 -10.16)
+            (xy 9.906 -9.652)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 10.668 -7.62)
+            (xy 9.906 -7.62)
+            (xy 9.906 -7.62)
+            (xy 8.89 -8.382)
+            (xy 8.89 -9.398)
+            (xy 10.16 -10.16)
+            (xy 10.414 -10.16)
+            (xy 10.668 -10.16)
+            (xy 10.668 -10.16)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (text "8-SOIC (3.9mm)" (at 6.35 -15.24 0)
+          (effects (font (size 0.889 0.889)))
+        )
+      )
+      (symbol "IC_VO207AT_0_1"
+        (polyline
+          (pts
+            (xy 0 -11.43)
+            (xy 12.7 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 0 0) (end 12.7 -16.51)
+          (stroke (width 0) (type default))
+          (fill (type background))
+        )
+        (text "VO207AT" (at 6.35 -12.7 0)
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (symbol "IC_VO207AT_1_1"
+        (pin input line (at -5.08 -2.54 0) (length 5.08)
+          (name "A" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin input line (at -5.08 -5.08 0) (length 5.08)
+          (name "K" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin input line (at -5.08 -7.62 0) (length 5.08)
+          (name "NC" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin input line (at -5.08 -10.16 0) (length 5.08)
+          (name "NC" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin input line (at 17.78 -10.16 180) (length 5.08)
+          (name "E" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+        (pin input line (at 17.78 -7.62 180) (length 5.08)
+          (name "C" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
+        )
+        (pin input line (at 17.78 -5.08 180) (length 5.08)
+          (name "B" (effects (font (size 1.27 1.27))))
+          (number "7" (effects (font (size 1.27 1.27))))
+        )
+        (pin input line (at 17.78 -2.54 180) (length 5.08)
+          (name "NC" (effects (font (size 1.27 1.27))))
+          (number "8" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:INVERTER_NC7WZ14P6X-L22347" (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 2.54 3.81 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Value" "NC7WZ14P6X-L22347" (at 2.54 6.35 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6" (at 2.54 16.51 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Datasheet" "https://www.onsemi.com/pdf/datasheet/nc7wz14-d.pdf" (at 2.54 8.89 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Description" "Inverter IC 2 Channel Schmitt Trigger Input SC-70-6" (at 2.54 11.43 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Part Number" "NC7WZ14P6X-L22347" (at 2.54 19.05 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/onsemi/NC7WZ14P6X-L22347/16528780" (at 2.54 13.97 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 2.54 21.59 0)
+        (effects (font (size 1.27 1.27)) (justify left))
+      )
+      (property "ki_keywords" "NC7WZ14P6X-L22347" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Inverter IC 2 Channel Schmitt Trigger Input SC-70-6" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "INVERTER_NC7WZ14P6X-L22347_0_0"
+        (text "NC7WZ14P6X" (at 5.08 -12.7 0)
+          (effects (font (size 0.762 0.762)))
+        )
+        (text "SOT-363(SC-70-6)" (at 5.08 -15.24 0)
+          (effects (font (size 0.635 0.635)))
+        )
+      )
+      (symbol "INVERTER_NC7WZ14P6X-L22347_1_1"
+        (polyline
+          (pts
+            (xy 0 -11.43)
+            (xy 10.16 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 3.556 -2.54)
+            (xy 2.794 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.191 -4.953)
+            (xy 2.921 -4.953)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.842 -2.54)
+            (xy 7.112 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.477 -4.953)
+            (xy 7.239 -4.953)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.826 -2.921)
+            (xy 5.334 -2.921)
+            (xy 5.334 -1.905)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.207 -4.572)
+            (xy 4.699 -4.572)
+            (xy 4.699 -5.588)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.191 -6.477)
+            (xy 5.969 -4.953)
+            (xy 4.191 -3.556)
+            (xy 4.191 -6.477)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.445 -5.588)
+            (xy 4.953 -5.588)
+            (xy 4.953 -4.572)
+            (xy 5.207 -4.572)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.588 -1.905)
+            (xy 5.08 -1.905)
+            (xy 5.08 -2.921)
+            (xy 4.826 -2.921)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.842 -1.016)
+            (xy 4.064 -2.54)
+            (xy 5.842 -3.937)
+            (xy 5.842 -1.016)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 0 0) (end 10.16 -16.51)
+          (stroke (width 0) (type default))
+          (fill (type background))
+        )
+        (circle (center 3.81 -2.54) (radius 0.254)
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (circle (center 6.223 -4.953) (radius 0.254)
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (text "INVERTER" (at 5.08 -13.97 0)
+          (effects (font (size 0.762 0.762)))
+        )
+        (pin passive line (at 15.24 -2.54 180) (length 5.08)
+          (name "1A" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -10.16 0) (length 5.08)
+          (name "GND" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -5.08 0) (length 5.08)
+          (name "2A" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 15.24 -5.08 180) (length 5.08)
+          (name "2Y" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -7.62 0) (length 5.08)
+          (name "VCC" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 5.08)
+          (name "1Y" (effects (font (size 1.27 1.27))))
+          (number "6" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:RES_100R_1/20W" (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at 2.54 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "100R_1{slash}20W" (at 7.62 7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 17.78 17.78 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www.seielect.com/Catalog/SEI-RMCF_RMCP.pdf" (at 29.21 15.24 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "100 Ohms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 38.1 10.16 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "RMCF0201FT100R" (at 10.16 20.32 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0201FT100R/1714988" (at 50.8 12.7 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 6.35 22.86 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "R0201" (at 5.08 25.4 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "RMCF0201FT100R" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "100 Ohms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "RES_100R_1/20W_0_0"
+        (polyline
+          (pts
+            (xy 3.81 0)
+            (xy 4.445 1.27)
+            (xy 5.715 -1.27)
+            (xy 6.985 1.27)
+            (xy 8.255 -1.27)
+            (xy 8.89 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "RES_100R_1/20W_1_1"
+        (pin passive line (at 0 0 0) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 12.7 0 180) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:RES_3K3R_1/20W" (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at 3.81 6.35 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "3K3R_1{slash}20W" (at 8.89 8.89 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 17.78 19.05 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www.seielect.com/Catalog/SEI-RMCF_RMCP.pdf" (at 29.21 16.51 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "3.3 kOhms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 39.37 11.43 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "RMCF0201FT3K30" (at 10.16 21.59 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0201FT3K30/4439996" (at 50.8 13.97 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 6.35 24.13 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "R0201" (at 5.08 26.67 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "RMCF0201FT3K30" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "3.3 kOhms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "RES_3K3R_1/20W_0_0"
+        (polyline
+          (pts
+            (xy 3.81 0)
+            (xy 4.445 1.27)
+            (xy 5.715 -1.27)
+            (xy 6.985 1.27)
+            (xy 8.255 -1.27)
+            (xy 8.89 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "RES_3K3R_1/20W_1_1"
+        (pin passive line (at 0 0 0) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 12.7 0 180) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:RES_4K7R_1W" (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at 3.81 6.35 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "4K7R_1W" (at 7.62 8.89 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Resistor_SMD:R_MELF_MMB-0207" (at 19.05 19.05 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www.seielect.com/catalog/sei-mlfa.pdf" (at 26.67 16.51 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "4.7 kOhms ±1% 1W Chip Resistor MELF, 0207 Automotive AEC-Q200 Metal Film" (at 41.91 11.43 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "MLFA1FTC4K70" (at 10.16 21.59 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/MLFA1FTC4K70/8571818" (at 49.53 13.97 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 7.62 24.13 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "MELF" (at 5.08 26.67 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "MLFA1FTC4K70" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "4.7 kOhms ±1% 1W Chip Resistor MELF, 0207 Automotive AEC-Q200 Metal Film" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "RES_4K7R_1W_0_0"
+        (polyline
+          (pts
+            (xy 3.81 0)
+            (xy 4.445 1.27)
+            (xy 5.715 -1.27)
+            (xy 6.985 1.27)
+            (xy 8.255 -1.27)
+            (xy 8.89 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "RES_4K7R_1W_1_1"
+        (pin passive line (at 0 0 0) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 12.7 0 180) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:RES_820R_1/20W" (in_bom yes) (on_board yes)
+      (property "Reference" "R" (at 3.81 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "820R_1{slash}20W" (at 8.89 7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 17.78 17.78 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" (at 43.18 10.16 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "820 Ohms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film" (at 49.53 12.7 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "ERJ-1GNF8200C" (at 10.16 20.32 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/panasonic-electronic-components/ERJ-1GNF8200C/2036102" (at 54.61 15.24 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 6.35 22.86 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "R0201" (at 5.08 25.4 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "ERJ-1GNF8200C" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "820 Ohms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "RES_820R_1/20W_0_0"
+        (polyline
+          (pts
+            (xy 3.81 0)
+            (xy 4.445 1.27)
+            (xy 5.715 -1.27)
+            (xy 6.985 1.27)
+            (xy 8.255 -1.27)
+            (xy 8.89 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "RES_820R_1/20W_1_1"
+        (pin passive line (at 0 0 0) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 12.7 0 180) (length 3.81)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:SCR_TISP4025H1BJR-S" (in_bom yes) (on_board yes)
+      (property "Reference" "D" (at 3.81 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "TISP4025H1BJR-S" (at 11.43 7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Diode_SMD:D_SMB" (at 11.43 17.78 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www.bourns.com/data/global/pdfs/TISP40xxH1BJ.pdf" (at 33.02 10.16 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "13V Off-State 400 A Ipp TVS Thyristor DO-214AA, SMB" (at 30.48 15.24 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "TISP4025H1BJR-S" (at 12.7 20.32 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/bourns-inc/TISP4025H1BJR-S/5816300" (at 44.45 12.7 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 7.62 22.86 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Voltage Off State" "13 V" (at 5.08 27.94 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "SMB" (at 5.08 25.4 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "TISP4025H1BJR-S" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "13V Off-State 400 A Ipp TVS Thyristor DO-214AA, SMB" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "SCR_TISP4025H1BJR-S_0_0"
+        (polyline
+          (pts
+            (xy 5.08 0)
+            (xy 7.62 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.08 0)
+            (xy 7.62 -1.27)
+            (xy 7.62 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 5.08 -1.27)
+            (xy 5.08 1.27)
+            (xy 7.62 0)
+            (xy 7.62 1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "SCR_TISP4025H1BJR-S_1_1"
+        (pin passive line (at 0 0 0) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 12.7 0 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:SSR_AQY212EHA" (in_bom yes) (on_board yes)
+      (property "Reference" "U" (at 2.54 3.81 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "AQY212EHA" (at 7.62 6.35 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Package_DIP:SMDIP-4_W7.62mm" (at 17.78 16.51 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www3.panasonic.biz/ac/e_download/control/relay/photomos/catalog/semi_eng_ge1a_aqy21_e.pdf" (at 53.34 8.89 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "Solid State SPST-NO (1 Form A) 4-SMD (0.300\", 7.62mm)" (at 30.48 13.97 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "AQY212EHA" (at 7.62 19.05 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/panasonic-electric-works/AQY212EHA/512406" (at 45.72 11.43 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 6.35 21.59 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "AQY212EHA" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Solid State SPST-NO (1 Form A) 4-SMD (0.300\", 7.62mm)" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "SSR_AQY212EHA_0_0"
+        (polyline
+          (pts
+            (xy 0 -17.78)
+            (xy 12.7 -17.78)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 -10.16)
+            (xy 3.81 -10.16)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.445 -9.525)
+            (xy 5.1979 -8.4346)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 4.8106 -10.9249)
+            (xy 5.6133 -9.7587)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 7.62 -11.43)
+            (xy 8.89 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 7.62 -6.35)
+            (xy 7.62 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 7.62 -6.35)
+            (xy 8.89 -6.35)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 8.89 -12.7)
+            (xy 8.89 -9.906)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 8.89 -5.08)
+            (xy 8.89 -7.874)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -12.7)
+            (xy 9.271 -12.065)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -11.684)
+            (xy 9.271 -11.049)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -10.668)
+            (xy 9.271 -9.906)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -7.112)
+            (xy 9.271 -7.874)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -6.096)
+            (xy 9.271 -6.731)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -5.08)
+            (xy 9.271 -5.715)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.16 -10.287)
+            (xy 10.16 -9.144)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.16 -7.493)
+            (xy 10.16 -9.144)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.668 -11.938)
+            (xy 11.43 -11.938)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.668 -5.842)
+            (xy 11.43 -5.842)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 -2.54)
+            (xy 2.54 -2.54)
+            (xy 2.54 -7.62)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 2.54 -10.16)
+            (xy 2.54 -15.24)
+            (xy 0 -15.24)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -12.446)
+            (xy 10.16 -12.446)
+            (xy 10.16 -13.589)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -5.334)
+            (xy 10.16 -5.334)
+            (xy 10.16 -4.191)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.16 -12.954)
+            (xy 11.049 -12.954)
+            (xy 11.049 -11.938)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.16 -9.652)
+            (xy 11.049 -9.652)
+            (xy 11.049 -11.938)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.16 -8.128)
+            (xy 11.049 -8.128)
+            (xy 11.049 -5.842)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 10.16 -4.826)
+            (xy 11.049 -4.826)
+            (xy 11.049 -5.842)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 12.7 -15.24)
+            (xy 10.16 -15.24)
+            (xy 10.16 -13.335)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 12.7 -2.54)
+            (xy 10.16 -2.54)
+            (xy 10.16 -4.445)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 3.81 -7.62)
+            (xy 1.27 -7.62)
+            (xy 2.54 -10.16)
+            (xy 3.81 -7.62)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 4.7046 -8.201)
+            (xy 5.767 -8.8478)
+            (xy 5.767 -7.5778)
+            (xy 4.7047 -8.1901)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 5.0962 -9.471)
+            (xy 6.1586 -10.1178)
+            (xy 6.1586 -8.8478)
+            (xy 5.0963 -9.4601)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -10.287)
+            (xy 10.16 -10.287)
+            (xy 10.16 -11.43)
+            (xy 9.398 -11.43)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.271 -7.493)
+            (xy 10.16 -7.493)
+            (xy 10.16 -6.35)
+            (xy 9.398 -6.35)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 9.779 -11.557)
+            (xy 9.398 -11.43)
+            (xy 9.779 -11.303)
+            (xy 9.779 -11.557)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 9.779 -6.223)
+            (xy 9.398 -6.35)
+            (xy 9.779 -6.477)
+            (xy 9.779 -6.223)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 11.049 -11.938)
+            (xy 10.668 -10.922)
+            (xy 11.43 -10.922)
+            (xy 11.049 -11.938)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 11.049 -5.842)
+            (xy 10.668 -6.858)
+            (xy 11.43 -6.858)
+            (xy 11.049 -5.842)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (rectangle (start 0 0) (end 12.7 -22.86)
+          (stroke (width 0) (type default))
+          (fill (type background))
+        )
+        (text "4SMD" (at 6.35 -21.59 0)
+          (effects (font (size 1.27 1.27)))
+        )
+        (text "AQY212EHA" (at 6.35 -19.05 0)
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (symbol "SSR_AQY212EHA_1_1"
+        (pin passive line (at -5.08 -2.54 0) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at -5.08 -15.24 0) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 17.78 -15.24 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 17.78 -2.54 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "_SCHLIB_SparkleSplashy:TVS_SD22-01FTG" (in_bom yes) (on_board yes)
+      (property "Reference" "D" (at 2.54 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "SD22-01FTG" (at 7.62 7.62 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Diode_SMD:D_SOD-323" (at 12.7 17.78 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sd22_datasheet.pdf.pdf" (at 63.5 15.24 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Description" "35.5V (Typ) Clamp 27A (8/20µs) Ipp Tvs Diode Surface Mount SOD-323" (at 36.83 10.16 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Part Number" "SD22-01FTG" (at 7.62 20.32 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Link" "https://www.digikey.ca/en/products/detail/littelfuse-inc/SD22-01FTG/13532036" (at 41.91 12.7 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "SCH CHECK" "CHECKED" (at 6.35 25.4 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Package" "SOD-323" (at 6.35 22.86 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "VBR" "23V" (at 3.81 27.94 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "ki_keywords" "SD22-01FTG" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "35.5V (Typ) Clamp 27A (8/20µs) Ipp Tvs Diode Surface Mount SOD-323" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "TVS_SD22-01FTG_0_0"
+        (polyline
+          (pts
+            (xy 5.08 1.27)
+            (xy 5.08 -1.27)
+            (xy 7.62 0)
+            (xy 5.08 1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type outline))
+        )
+        (polyline
+          (pts
+            (xy 8.89 2.54)
+            (xy 7.62 1.27)
+            (xy 7.62 -1.27)
+            (xy 6.35 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "TVS_SD22-01FTG_1_1"
+        (pin passive line (at 12.7 0 180) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 0 0 0) (length 5.08)
+          (name "" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "power:Earth" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "#PWR" (at 0 -6.35 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Value" "Earth" (at 0 -3.81 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "global ground gnd" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Power symbol creates a global label with name \"Earth\"" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "Earth_0_1"
+        (polyline
+          (pts
+            (xy -0.635 -1.905)
+            (xy 0.635 -1.905)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -0.127 -2.54)
+            (xy 0.127 -2.54)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 0 -1.27)
+            (xy 0 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 -1.27)
+            (xy -1.27 -1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "Earth_1_1"
+        (pin power_in line (at 0 0 270) (length 0) hide
+          (name "Earth" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "power:GND1" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
+      (property "Reference" "#PWR" (at 0 -6.35 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Value" "GND1" (at 0 -3.81 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "global power" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Power symbol creates a global label with name \"GND1\" , ground" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "GND1_0_1"
+        (polyline
+          (pts
+            (xy 0 0)
+            (xy 0 -1.27)
+            (xy 1.27 -1.27)
+            (xy 0 -2.54)
+            (xy -1.27 -1.27)
+            (xy 0 -1.27)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "GND1_1_1"
+        (pin power_in line (at 0 0 270) (length 0) hide
+          (name "GND1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+  )
+
+  (junction (at 363.22 114.3) (diameter 0) (color 0 0 0 0)
+    (uuid 06ee32ab-0fd8-4b08-a187-964450be1abe)
+  )
+  (junction (at 201.93 99.06) (diameter 0) (color 0 0 0 0)
+    (uuid 09ac22b1-d0c7-4790-acad-fca63525a8f8)
+  )
+  (junction (at 335.28 135.89) (diameter 0) (color 0 0 0 0)
+    (uuid 45b99ea4-60df-4db1-a73c-8107edd7a7e5)
+  )
+  (junction (at 138.43 119.38) (diameter 0) (color 0 0 0 0)
+    (uuid 5250f87f-5b27-452f-b3b3-02edbec00e5d)
+  )
+  (junction (at 335.28 93.98) (diameter 0) (color 0 0 0 0)
+    (uuid 5302c2f9-cebe-4a4c-be3b-d585ef13f77b)
+  )
+  (junction (at 311.15 93.98) (diameter 0) (color 0 0 0 0)
+    (uuid 74ec0a9e-7f36-42ac-80de-87653d44f563)
+  )
+  (junction (at 311.15 135.89) (diameter 0) (color 0 0 0 0)
+    (uuid 8c41643a-f964-4214-9f99-cf29337d845a)
+  )
+  (junction (at 82.55 104.14) (diameter 0) (color 0 0 0 0)
+    (uuid bf936b35-4c84-416c-b206-a736b46329e2)
+  )
+  (junction (at 298.45 93.98) (diameter 0) (color 0 0 0 0)
+    (uuid c638af73-fdf1-4d00-81ed-a4f53744f0a4)
+  )
+  (junction (at 335.28 114.3) (diameter 0) (color 0 0 0 0)
+    (uuid c8a93876-39d8-4300-8b76-e600863e8d65)
+  )
+  (junction (at 82.55 119.38) (diameter 0) (color 0 0 0 0)
+    (uuid e3741142-ed77-4b02-a700-4ca43529e0cd)
+  )
+  (junction (at 201.93 67.31) (diameter 0) (color 0 0 0 0)
+    (uuid e739c677-9757-4add-818f-46861c6517ec)
+  )
+  (junction (at 302.26 135.89) (diameter 0) (color 0 0 0 0)
+    (uuid eda3b335-522d-4058-9b6e-68b5cf9e3dad)
+  )
+  (junction (at 138.43 104.14) (diameter 0) (color 0 0 0 0)
+    (uuid f2bdb169-739e-49b0-82ac-8282495e4b1f)
+  )
+
+  (no_connect (at 246.38 99.06) (uuid 512a14d5-396d-4f2b-8796-be998adeb1d2))
+  (no_connect (at 246.38 101.6) (uuid d4730d6d-7d45-41c5-ade9-3766770b6e0f))
+  (no_connect (at 223.52 93.98) (uuid ee78c765-40ff-40b9-ac82-28f2ff27f8cf))
+
+  (wire (pts (xy 201.93 142.24) (xy 201.93 143.51))
+    (stroke (width 0) (type default))
+    (uuid 07b8ea7e-3dc0-45b3-82a7-6e4941cbcbf9)
+  )
+  (wire (pts (xy 335.28 130.81) (xy 335.28 135.89))
+    (stroke (width 0) (type default))
+    (uuid 0900ac7d-1ce2-4015-9bb6-9ebf372a7bd2)
+  )
+  (wire (pts (xy 82.55 104.14) (xy 97.79 104.14))
+    (stroke (width 0) (type default))
+    (uuid 12ad6010-b990-42ca-ad1b-136628371643)
+  )
+  (wire (pts (xy 246.38 96.52) (xy 302.26 96.52))
+    (stroke (width 0) (type default))
+    (uuid 136438bc-d206-400d-89a7-d17446fe8e9e)
+  )
+  (wire (pts (xy 25.4 99.06) (xy 52.07 99.06))
+    (stroke (width 0) (type default))
+    (uuid 16165f29-02e5-40b3-9eef-4e107b38c8e0)
+  )
+  (polyline (pts (xy 203.2 87.63) (xy 201.93 90.17))
+    (stroke (width 0) (type solid))
+    (uuid 1c38430b-1924-4842-a543-f1754c9301bd)
+  )
+
+  (wire (pts (xy 201.93 67.31) (xy 220.98 67.31))
+    (stroke (width 0) (type default))
+    (uuid 1cd13eb9-7e55-48cf-b883-fa7a385004a0)
+  )
+  (polyline (pts (xy 186.69 144.78) (xy 184.15 144.78))
+    (stroke (width 0) (type solid))
+    (uuid 1e71bc2f-dc4b-4702-ba49-8482e9b1aa79)
+  )
+  (polyline (pts (xy 142.24 255.27) (xy 142.24 137.16))
+    (stroke (width 0) (type default))
+    (uuid 24b21f1f-3a9c-4a01-b8b0-5978644af88c)
+  )
+
+  (wire (pts (xy 298.45 143.51) (xy 298.45 93.98))
+    (stroke (width 0) (type default))
+    (uuid 27a132f1-8db1-41bd-b280-658afb299974)
+  )
+  (wire (pts (xy 246.38 143.51) (xy 298.45 143.51))
+    (stroke (width 0) (type default))
+    (uuid 28ecf5f1-c7d0-4537-ac1e-f2ae27dd9962)
+  )
+  (wire (pts (xy 363.22 114.3) (xy 363.22 115.57))
+    (stroke (width 0) (type default))
+    (uuid 2a670299-21ba-493d-bb09-7a7603b29825)
+  )
+  (polyline (pts (xy 35.56 135.89) (xy 143.51 135.89))
+    (stroke (width 0) (type default))
+    (uuid 2e233e6c-2ed5-44dd-bae0-d71dbbf31525)
+  )
+
+  (wire (pts (xy 60.96 104.14) (xy 82.55 104.14))
+    (stroke (width 0) (type default))
+    (uuid 2f40073b-ef3a-4609-9554-6e1e5ef58c26)
+  )
+  (polyline (pts (xy 38.1 138.43) (xy 140.97 138.43))
+    (stroke (width 0) (type default))
+    (uuid 3001c807-0ce0-4b69-9d5a-140c96029096)
+  )
+
+  (wire (pts (xy 201.93 143.51) (xy 223.52 143.51))
+    (stroke (width 0) (type default))
+    (uuid 31db0839-b1eb-4c8f-a489-bfc78be388da)
+  )
+  (wire (pts (xy 220.98 69.85) (xy 220.98 67.31))
+    (stroke (width 0) (type default))
+    (uuid 3246c104-bfe9-4793-b61e-e011fd26d131)
+  )
+  (polyline (pts (xy 127 102.87) (xy 127 109.22))
+    (stroke (width 0) (type default))
+    (uuid 352209f6-085c-4027-8e8c-673b5ba165ae)
+  )
+  (polyline (pts (xy 129.54 102.87) (xy 132.08 104.14))
+    (stroke (width 0) (type solid))
+    (uuid 36cde7ef-4a3a-4a48-80b7-fb3c52240d5e)
+  )
+
+  (wire (pts (xy 95.25 106.68) (xy 95.25 119.38))
+    (stroke (width 0) (type default))
+    (uuid 3b4aeeda-b9c7-4c46-8884-a6a4737ad621)
+  )
+  (polyline (pts (xy 200.66 87.63) (xy 203.2 87.63))
+    (stroke (width 0) (type solid))
+    (uuid 3e37031e-6e92-42b7-8b81-340466457361)
+  )
+  (polyline (pts (xy 36.83 137.16) (xy 36.83 255.27))
+    (stroke (width 0) (type default))
+    (uuid 3f350e29-14eb-44ee-8a3c-6e03c66e0a00)
+  )
+  (polyline (pts (xy 143.51 256.54) (xy 143.51 135.89))
+    (stroke (width 0) (type default))
+    (uuid 3fe30cdf-b292-4d42-8a3b-d0236b18a433)
+  )
+  (polyline (pts (xy 254 92.71) (xy 251.46 93.98))
+    (stroke (width 0) (type solid))
+    (uuid 404ef419-4db1-459f-b989-8380f833a00b)
+  )
+
+  (wire (pts (xy 246.38 93.98) (xy 271.78 93.98))
+    (stroke (width 0) (type default))
+    (uuid 41f41722-16cd-4ec9-ab23-e695ae37961d)
+  )
+  (wire (pts (xy 302.26 96.52) (xy 302.26 135.89))
+    (stroke (width 0) (type default))
+    (uuid 438cff71-cd46-4606-af23-c98c49784c63)
+  )
+  (wire (pts (xy 298.45 93.98) (xy 311.15 93.98))
+    (stroke (width 0) (type default))
+    (uuid 474a46c0-1272-46b0-8dbe-728c9e07193b)
+  )
+  (wire (pts (xy 284.48 93.98) (xy 298.45 93.98))
+    (stroke (width 0) (type default))
+    (uuid 47b3177b-54f5-4594-99b5-c8ecb47c9179)
+  )
+  (wire (pts (xy 64.77 101.6) (xy 97.79 101.6))
+    (stroke (width 0) (type default))
+    (uuid 4920ad2c-6d35-4d26-930d-8cd792fc1709)
+  )
+  (wire (pts (xy 378.46 116.84) (xy 378.46 135.89))
+    (stroke (width 0) (type default))
+    (uuid 49ffc483-fa78-480d-9833-d03526ac4837)
+  )
+  (polyline (pts (xy 254 92.71) (xy 254 95.25))
+    (stroke (width 0) (type solid))
+    (uuid 4ac326f3-d5d0-43b9-b4c6-675500f8f490)
+  )
+  (polyline (pts (xy 259.08 87.63) (xy 246.38 87.63))
+    (stroke (width 0) (type default))
+    (uuid 4b5e7366-fe59-4dd1-bbe9-1113efecb13a)
+  )
+
+  (wire (pts (xy 185.42 156.21) (xy 223.52 156.21))
+    (stroke (width 0) (type default))
+    (uuid 4d24d19f-d769-40c8-ac22-f49578d143a2)
+  )
+  (wire (pts (xy 208.28 104.14) (xy 208.28 101.6))
+    (stroke (width 0) (type default))
+    (uuid 4eeaf860-6566-45a5-a177-99605d2234d4)
+  )
+  (wire (pts (xy 82.55 119.38) (xy 95.25 119.38))
+    (stroke (width 0) (type default))
+    (uuid 5323bc4e-64de-4cf6-8804-babd189f73cc)
+  )
+  (polyline (pts (xy 140.97 138.43) (xy 140.97 254))
+    (stroke (width 0) (type default))
+    (uuid 53c08d79-c42e-4f68-bda4-9c62a9be92d2)
+  )
+  (polyline (pts (xy 127 109.22) (xy 135.89 109.22))
+    (stroke (width 0) (type default))
+    (uuid 550ec787-64fa-4076-9cd7-0077a6cfa13a)
+  )
+  (polyline (pts (xy 72.39 105.41) (xy 74.93 104.14))
+    (stroke (width 0) (type solid))
+    (uuid 55cc393a-f1a0-4ab7-aedf-bfe7a1a7cdc1)
+  )
+  (polyline (pts (xy 254 95.25) (xy 251.46 93.98))
+    (stroke (width 0) (type solid))
+    (uuid 570bf4c4-3a65-4f05-a6c0-7affe1e25387)
+  )
+
+  (wire (pts (xy 201.93 82.55) (xy 201.93 99.06))
+    (stroke (width 0) (type default))
+    (uuid 5c6fb34a-e15e-4832-94db-94db7e5b1bdc)
+  )
+  (polyline (pts (xy 200.66 87.63) (xy 201.93 90.17))
+    (stroke (width 0) (type solid))
+    (uuid 5e137db7-0ec8-4acd-ab9e-eba155411f3f)
+  )
+
+  (wire (pts (xy 356.87 93.98) (xy 335.28 93.98))
+    (stroke (width 0) (type default))
+    (uuid 5e876729-190a-4136-aa0d-9af11fee3877)
+  )
+  (wire (pts (xy 138.43 104.14) (xy 138.43 105.41))
+    (stroke (width 0) (type default))
+    (uuid 5fa42ea5-461e-4162-94ac-3c49018c6048)
+  )
+  (polyline (pts (xy 78.74 109.22) (xy 78.74 102.87))
+    (stroke (width 0) (type default))
+    (uuid 641ad69c-e57f-4c48-b590-77a2df738d0e)
+  )
+
+  (wire (pts (xy 82.55 104.14) (xy 82.55 105.41))
+    (stroke (width 0) (type default))
+    (uuid 64cec47b-a8fe-456d-a72e-fb53a118f77b)
+  )
+  (wire (pts (xy 335.28 114.3) (xy 335.28 118.11))
+    (stroke (width 0) (type default))
+    (uuid 65e9f467-b267-4d64-8edd-37cdb3676266)
+  )
+  (wire (pts (xy 118.11 99.06) (xy 152.4 99.06))
+    (stroke (width 0) (type default))
+    (uuid 6691e9cf-0fbe-469e-9842-22b1931a3052)
+  )
+  (wire (pts (xy 387.35 114.3) (xy 363.22 114.3))
+    (stroke (width 0) (type default))
+    (uuid 69fc776f-bcd6-4b8a-9fff-d9c82ab40afa)
+  )
+  (wire (pts (xy 363.22 114.3) (xy 335.28 114.3))
+    (stroke (width 0) (type default))
+    (uuid 69ffcbe4-20f3-476d-b1dd-76433e2ab9f8)
+  )
+  (polyline (pts (xy 196.85 83.82) (xy 204.47 83.82))
+    (stroke (width 0) (type default))
+    (uuid 6bb63830-0124-47bf-80e9-48fb11c7506a)
+  )
+
+  (wire (pts (xy 220.98 82.55) (xy 220.98 96.52))
+    (stroke (width 0) (type default))
+    (uuid 6be65609-c425-453e-bcb6-1393d381d150)
+  )
+  (polyline (pts (xy 183.515 147.32) (xy 183.515 139.7))
+    (stroke (width 0) (type default))
+    (uuid 6cacf991-4561-4a74-9399-84e5a8187290)
+  )
+  (polyline (pts (xy 204.47 92.71) (xy 196.85 92.71))
+    (stroke (width 0) (type default))
+    (uuid 6d516da7-9236-4190-99ac-e248b26c20c7)
+  )
+
+  (wire (pts (xy 82.55 118.11) (xy 82.55 119.38))
+    (stroke (width 0) (type default))
+    (uuid 6fbeaa5b-a736-45b3-9abe-f11f49e79043)
+  )
+  (polyline (pts (xy 129.54 105.41) (xy 132.08 104.14))
+    (stroke (width 0) (type solid))
+    (uuid 723bf75f-4795-4161-bbf1-b247ef0f6911)
+  )
+
+  (wire (pts (xy 199.39 67.31) (xy 201.93 67.31))
+    (stroke (width 0) (type default))
+    (uuid 736fe67e-1d4b-480f-95df-2d5d3330a298)
+  )
+  (polyline (pts (xy 36.83 137.16) (xy 142.24 137.16))
+    (stroke (width 0) (type default))
+    (uuid 766cb85b-9d4b-417b-8833-3eb69367d9c6)
+  )
+
+  (wire (pts (xy 138.43 119.38) (xy 151.13 119.38))
+    (stroke (width 0) (type default))
+    (uuid 775fdd2e-0070-43f4-853f-3bbc17ec5ecf)
+  )
+  (wire (pts (xy 246.38 156.21) (xy 302.26 156.21))
+    (stroke (width 0) (type default))
+    (uuid 77fc3fc1-7999-4c46-a2ab-02b9d2a52b91)
+  )
+  (wire (pts (xy 172.72 101.6) (xy 185.42 101.6))
+    (stroke (width 0) (type default))
+    (uuid 7bd02204-a8e9-48ea-a9cf-e1c4d71f8f95)
+  )
+  (polyline (pts (xy 69.85 109.22) (xy 78.74 109.22))
+    (stroke (width 0) (type default))
+    (uuid 810d7527-0b33-444d-8c6c-adb0774eec0d)
+  )
+
+  (wire (pts (xy 201.93 67.31) (xy 201.93 69.85))
+    (stroke (width 0) (type default))
+    (uuid 83c0034e-320e-4802-aaa7-5cb5030b1674)
+  )
+  (polyline (pts (xy 135.89 109.22) (xy 135.89 102.87))
+    (stroke (width 0) (type default))
+    (uuid 8645ce35-8c4a-48aa-97f8-8a2f57e05ec4)
+  )
+  (polyline (pts (xy 72.39 102.87) (xy 72.39 105.41))
+    (stroke (width 0) (type solid))
+    (uuid 8a58d525-eccb-493e-b397-8885916c638b)
+  )
+
+  (wire (pts (xy 118.11 101.6) (xy 152.4 101.6))
+    (stroke (width 0) (type default))
+    (uuid 8aaeb0dc-4ec7-4f85-ad10-92c43d864ff6)
+  )
+  (wire (pts (xy 201.93 127) (xy 201.93 129.54))
+    (stroke (width 0) (type default))
+    (uuid 8cd16615-159b-4fa9-be6f-fd6285e4b6f9)
+  )
+  (wire (pts (xy 208.28 101.6) (xy 223.52 101.6))
+    (stroke (width 0) (type default))
+    (uuid 93817f3e-910e-4b2f-a212-e0dae9bd4ba3)
+  )
+  (polyline (pts (xy 246.38 96.52) (xy 246.38 87.63))
+    (stroke (width 0) (type default))
+    (uuid 951d9247-d282-4daf-bb37-b71dcb9e0c43)
+  )
+
+  (wire (pts (xy 172.72 99.06) (xy 201.93 99.06))
+    (stroke (width 0) (type default))
+    (uuid 9529897c-1f2f-44b3-aa28-dad7e8ab105c)
+  )
+  (wire (pts (xy 125.73 104.14) (xy 138.43 104.14))
+    (stroke (width 0) (type default))
+    (uuid 9532fd98-c63e-4259-ae3e-609db948eeaf)
+  )
+  (polyline (pts (xy 69.85 102.87) (xy 78.74 102.87))
+    (stroke (width 0) (type default))
+    (uuid 98db0210-e073-4480-9223-f9cbe54fe2af)
+  )
+
+  (wire (pts (xy 387.35 116.84) (xy 378.46 116.84))
+    (stroke (width 0) (type default))
+    (uuid 9bb355fb-86bd-4f76-94d9-2ad06e7da53d)
+  )
+  (polyline (pts (xy 129.54 102.87) (xy 129.54 105.41))
+    (stroke (width 0) (type solid))
+    (uuid 9be54c98-e976-4f21-a2f7-9e9238bd90ed)
+  )
+
+  (wire (pts (xy 302.26 135.89) (xy 311.15 135.89))
+    (stroke (width 0) (type default))
+    (uuid a0c9ef10-0629-4d11-986c-870f252ff7a0)
+  )
+  (wire (pts (xy 185.42 101.6) (xy 185.42 156.21))
+    (stroke (width 0) (type default))
+    (uuid a0d286af-8b5f-4db9-a9d9-bbb3ecafce7c)
+  )
+  (wire (pts (xy 387.35 111.76) (xy 378.46 111.76))
+    (stroke (width 0) (type default))
+    (uuid a0e9bf1d-8803-4aca-a14d-1862bddd6c84)
+  )
+  (wire (pts (xy 138.43 118.11) (xy 138.43 119.38))
+    (stroke (width 0) (type default))
+    (uuid a18fa6db-acf6-4b66-8f3c-61ed97c6b4b2)
+  )
+  (polyline (pts (xy 184.15 144.78) (xy 185.42 142.24))
+    (stroke (width 0) (type solid))
+    (uuid a6ba446e-fc0c-4524-821e-9248e3f173f4)
+  )
+  (polyline (pts (xy 190.5 147.32) (xy 183.515 147.32))
+    (stroke (width 0) (type default))
+    (uuid a7920162-fefc-4a81-8636-91aea32b3f4e)
+  )
+  (polyline (pts (xy 72.39 102.87) (xy 74.93 104.14))
+    (stroke (width 0) (type solid))
+    (uuid ae238a9e-9b1a-45e9-925f-5d65fecc0137)
+  )
+
+  (wire (pts (xy 378.46 111.76) (xy 378.46 93.98))
+    (stroke (width 0) (type default))
+    (uuid b0ce8ceb-f744-4424-b0e9-24df63b41466)
+  )
+  (wire (pts (xy 311.15 93.98) (xy 311.15 106.68))
+    (stroke (width 0) (type default))
+    (uuid b1b42b14-105c-4bc0-86bc-ddf722053ab3)
+  )
+  (polyline (pts (xy 190.5 147.32) (xy 190.5 139.7))
+    (stroke (width 0) (type default))
+    (uuid b29d0b9d-d880-4dce-8c16-0dcbd6f7b8bc)
+  )
+
+  (wire (pts (xy 152.4 106.68) (xy 151.13 106.68))
+    (stroke (width 0) (type default))
+    (uuid b47cdfd5-eb99-4441-a0be-7662e9e8c857)
+  )
+  (wire (pts (xy 220.98 96.52) (xy 223.52 96.52))
+    (stroke (width 0) (type default))
+    (uuid b7055ca0-23d9-43eb-a359-63bed72af6fe)
+  )
+  (wire (pts (xy 378.46 135.89) (xy 369.57 135.89))
+    (stroke (width 0) (type default))
+    (uuid b7f6a411-575c-46df-beab-7caac06d03c9)
+  )
+  (polyline (pts (xy 140.97 254) (xy 38.1 254))
+    (stroke (width 0) (type default))
+    (uuid b9923a9e-c060-4129-a7d8-55435278bf23)
+  )
+  (polyline (pts (xy 35.56 135.89) (xy 35.56 256.54))
+    (stroke (width 0) (type default))
+    (uuid ba81047f-d697-40a5-b0bb-7674854a8d72)
+  )
+
+  (wire (pts (xy 302.26 156.21) (xy 302.26 135.89))
+    (stroke (width 0) (type default))
+    (uuid bb7ffc82-4b42-43bc-9a04-db7a42595c52)
+  )
+  (polyline (pts (xy 36.83 255.27) (xy 142.24 255.27))
+    (stroke (width 0) (type default))
+    (uuid bb931b06-9466-4a15-ac58-a622711625c0)
+  )
+  (polyline (pts (xy 183.515 139.7) (xy 190.5 139.7))
+    (stroke (width 0) (type default))
+    (uuid c09733a3-4922-43c5-aa6e-270c65022402)
+  )
+
+  (wire (pts (xy 82.55 119.38) (xy 82.55 120.65))
+    (stroke (width 0) (type default))
+    (uuid c1ac80fc-1750-40db-8532-28a27e8ae5e5)
+  )
+  (polyline (pts (xy 196.85 83.82) (xy 196.85 92.71))
+    (stroke (width 0) (type default))
+    (uuid c24f343c-78dc-41e1-bca4-226e52d3353e)
+  )
+
+  (wire (pts (xy 151.13 106.68) (xy 151.13 119.38))
+    (stroke (width 0) (type default))
+    (uuid d26d946d-b985-44dd-a3ff-d396a379e72d)
+  )
+  (wire (pts (xy 198.12 127) (xy 201.93 127))
+    (stroke (width 0) (type default))
+    (uuid d40e46a8-6cd4-4879-8400-ef0bfffa8a15)
+  )
+  (wire (pts (xy 201.93 99.06) (xy 223.52 99.06))
+    (stroke (width 0) (type default))
+    (uuid d5394491-298b-4b47-88f0-85046e301b43)
+  )
+  (polyline (pts (xy 35.56 256.54) (xy 143.51 256.54))
+    (stroke (width 0) (type default))
+    (uuid d5782221-e3e4-42e2-b4c8-34b7443939cf)
+  )
+
+  (wire (pts (xy 97.79 106.68) (xy 95.25 106.68))
+    (stroke (width 0) (type default))
+    (uuid d64fb9ae-ebd6-46fa-9111-b69c924b5f75)
+  )
+  (wire (pts (xy 311.15 119.38) (xy 311.15 135.89))
+    (stroke (width 0) (type default))
+    (uuid d94b5e3c-ce75-46fb-905f-35eed7d79512)
+  )
+  (polyline (pts (xy 204.47 83.82) (xy 204.47 92.71))
+    (stroke (width 0) (type default))
+    (uuid da3da4d3-bb19-40ea-9f7c-d81c58d2af70)
+  )
+  (polyline (pts (xy 259.08 87.63) (xy 259.08 96.52))
+    (stroke (width 0) (type default))
+    (uuid e4cbe268-2aa3-405f-9803-105c60d94e95)
+  )
+  (polyline (pts (xy 372.11 115.57) (xy 383.54 144.78))
+    (stroke (width 0) (type default))
+    (uuid e53234ff-a1b7-44c0-8528-a9fd6c4aa1da)
+  )
+
+  (wire (pts (xy 25.4 101.6) (xy 52.07 101.6))
+    (stroke (width 0) (type default))
+    (uuid e7b62c35-db41-4318-9b55-ff6e08e4dab3)
+  )
+  (polyline (pts (xy 127 102.87) (xy 135.89 102.87))
+    (stroke (width 0) (type default))
+    (uuid e7b6ce23-5b0c-4dda-9f7d-6bcb4fd0b5ec)
+  )
+
+  (wire (pts (xy 311.15 135.89) (xy 335.28 135.89))
+    (stroke (width 0) (type default))
+    (uuid e815ae7a-7500-479f-8b5c-fe812e38b818)
+  )
+  (wire (pts (xy 311.15 93.98) (xy 335.28 93.98))
+    (stroke (width 0) (type default))
+    (uuid e8bea664-5293-4b64-b4c4-4d80213faa27)
+  )
+  (polyline (pts (xy 186.69 144.78) (xy 185.42 142.24))
+    (stroke (width 0) (type solid))
+    (uuid ebd96ab5-3a95-4d3d-9ff2-132bbacdd1df)
+  )
+
+  (wire (pts (xy 138.43 119.38) (xy 138.43 120.65))
+    (stroke (width 0) (type default))
+    (uuid ed449de5-ca76-4bf4-9829-27c2dca51572)
+  )
+  (wire (pts (xy 335.28 93.98) (xy 335.28 96.52))
+    (stroke (width 0) (type default))
+    (uuid f0115101-c20b-449f-ac94-57543d7d9cc8)
+  )
+  (wire (pts (xy 335.28 109.22) (xy 335.28 114.3))
+    (stroke (width 0) (type default))
+    (uuid f10bc8e8-5fae-4823-ae82-ddfa36c9f94f)
+  )
+  (wire (pts (xy 356.87 135.89) (xy 335.28 135.89))
+    (stroke (width 0) (type default))
+    (uuid f1bc3be9-3ecc-447e-922a-18ce55174e1a)
+  )
+  (polyline (pts (xy 69.85 102.87) (xy 69.85 109.22))
+    (stroke (width 0) (type default))
+    (uuid f3b765f1-a2f8-4690-86c8-11a51defa813)
+  )
+  (polyline (pts (xy 259.08 96.52) (xy 246.38 96.52))
+    (stroke (width 0) (type default))
+    (uuid f57e2613-51c9-47ba-b786-3467bec46a69)
+  )
+
+  (wire (pts (xy 378.46 93.98) (xy 369.57 93.98))
+    (stroke (width 0) (type default))
+    (uuid f5f01896-7521-49f3-8cdb-9275c9a7d9fd)
+  )
+  (wire (pts (xy 64.77 99.06) (xy 97.79 99.06))
+    (stroke (width 0) (type default))
+    (uuid fb1748c3-f0a8-44b6-a940-15bf681f4423)
+  )
+  (wire (pts (xy 138.43 104.14) (xy 152.4 104.14))
+    (stroke (width 0) (type default))
+    (uuid fb505022-1cb8-46d8-ba96-9d47f0f76459)
+  )
+  (polyline (pts (xy 38.1 138.43) (xy 38.1 254))
+    (stroke (width 0) (type default))
+    (uuid fbf74be9-39ce-4f3e-b73d-7725d598469d)
+  )
+
+  (rectangle (start 368.3 146.05) (end 402.59 167.64)
+    (stroke (width 0) (type default))
+    (fill (type none))
+    (uuid 300d7a2d-eedd-46e0-8dbd-2159ccf91b0a)
+  )
+  (rectangle (start 369.57 147.32) (end 401.32 166.37)
+    (stroke (width 0) (type default))
+    (fill (type none))
+    (uuid 7a1dd14b-a561-4a60-8df0-bc8d0b920752)
+  )
+  (rectangle (start 370.84 148.59) (end 400.05 165.1)
+    (stroke (width 0) (type default))
+    (fill (type none))
+    (uuid f8ddea1e-7e51-4d4b-8a2b-f5c8fc2e2cae)
+  )
+
+  (image (at 99.06 67.31) (scale 0.79984)
+    (uuid 08f90142-b8dc-42c2-b3bd-1d55a5c259b0)
+    (data
+      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
+    )
+  )
+
+  (text "DALI SPEC." (at 40.64 144.78 0)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify left bottom))
+    (uuid 460a800a-4ede-4886-9238-4c531df31ad9)
+  )
+  (text "Voltage rating (IEC60929)\n\nIn general, the interface voltage is high if there is no communication (idle state).\nThe slopes of the received and transmitted data signal shall be 10 μs ≤ tfall ≤ 100 μs and\n10 μs ≤ trise ≤ 100 μs at the ballast terminals of the digital interface.\nThe voltage range shall be between 9,5 V and 22,5 V for \"high level\" and between -6,5 V and\n+6,5 V for \"low level\" respectively. Between 6,5 V and 9,5 V, the level is undefined.\n"
+    (at 40.64 217.17 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 6564fd46-a9f0-46c9-a6bb-f772ce0bcab4)
+  )
+  (text "I = 2 mA" (at 189.23 140.97 90)
+    (effects (font (size 0.762 0.762)) (justify right bottom))
+    (uuid 95df6d30-3786-4dc1-83d2-ec61efded95e)
+  )
+  (text "DNF" (at 218.44 77.47 0)
+    (effects (font (size 2.54 2.54) (thickness 0.508) bold) (justify left bottom))
+    (uuid 9934b9fd-e0fe-4b9e-9d2f-af3be1b6826d)
+  )
+  (text "I = 5 mA @ 22.5V\n	2 mA @  9.5" (at 247.65 91.44 0)
+    (effects (font (size 0.762 0.762)) (justify left bottom))
+    (uuid a55889d9-e9b6-4de7-8b6b-33c3aac27114)
+  )
+  (text "I = 5 mA" (at 133.35 107.95 0)
+    (effects (font (size 0.762 0.762)) (justify right bottom))
+    (uuid ab8c1d68-6118-4677-910d-13f46f565b89)
+  )
+  (text "Current rating (IEC60929)\n\nIn non-active state, the sink current of the ballast shall not exceed 2 mA at ≤22,5 V because\nof the actual maximum number of ballasts per control unit. This shall be guaranteed by each\nballast manufacturer.\nThe ballast shall be able to sink at least 250 mA at ≤ 4,5 V at active state. The ballast shall\nkeep the interface voltage lower than 4,5 V.\nThe interface power supply shall limit the supply current to max. 250 mA under all circumstances.\nThis current limitter circuit has to react faster than 10 μs\nThe interface specification at the ballast terminals shall be:\n– active state: low voltage level ≤ 4,5 V; high current level ≤ 250 mA (lim. by the power\nsupply);\n– non-active state: high voltage level ≤ 22,5 V, low voltage level ≤ 6,5 V; high current ≤\n2 mA."
+    (at 40.64 252.73 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b217f86b-829f-4eeb-bf6c-5c2de8941543)
+  )
+  (text "I = 5 mA" (at 76.2 107.95 0)
+    (effects (font (size 0.762 0.762)) (justify right bottom))
+    (uuid b823a22d-d2cf-4e8b-a4f1-7647f272a907)
+  )
+  (text "IEC60929\n\n• Short specification\n– Maximum 64 individual addressable ballasts within one system\n– The ballast can not act as a master controller\n– Multiple ballast groups\n- Bi-phase coding for error detection (see E.4.3.6, Pulse diagram)\n- Asynchronous start-stop transmission protocol\n- Low information rate: 1 200 bit/s\n- Allowed cable voltage drop: 2 V\n- No ground-loops because of isolation in the ballast\nThe tolerance at all mentioned timing specifications in this document shall be ±10 % if\nminimum/maximum are not specified.\n\nImpedance control terminals (see Figure E.1): Rin ≥ 8 KΩ static at typical high input voltage\nCin ≤ 1 nF\nLin ≤ 1 mH\n\nThe robustness can be increased with the optional implementation of:\n- polarity insensitive interface input;\n- overvoltage protection for accidental mains voltage between the control wires.\n• Transmission characteristics\nThe transmission rate, expressed in bandwidth, is specified with 1 200 Hz for the forward\nchannel and for the backward channel.\nAll specified voltage and current levels refer to the terminals of the electronic ballast."
+    (at 40.64 198.12 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b92fa095-cd0f-46ed-993c-7132b8eb1a8e)
+  )
+  (text "I = 1 mA" (at 199.39 91.44 90)
+    (effects (font (size 0.762 0.762)) (justify left bottom))
+    (uuid ba0aa9bb-2756-4066-9263-de8d19e96663)
+  )
+  (text "CHECKED" (at 369.57 36.83 0)
+    (effects (font (size 5 5) bold) (justify left bottom))
+    (uuid ba72a8ef-94d0-4ed7-847f-ff359b19251e)
+  )
+  (text "DESIGN NOTE:\n\nCONNECT THE CABLE SHIELD \nTO THE MIDDLE PIN (2)"
+    (at 372.11 158.75 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid d3836110-6b20-4383-b916-0e2b4ae497ec)
+  )
+
+  (label "DALI_+" (at 379.73 111.76 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 5e858e3e-a147-4f6f-8134-b2b6abb74612)
+  )
+  (label "DALI_BUFF_2A" (at 81.28 101.6 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 96a76dad-d926-4fae-9c0a-9dd77051d526)
+  )
+  (label "DALI_BUFF_1A" (at 172.72 99.06 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9ebf776d-6f88-4172-ad5d-1c16d0fd6a49)
+  )
+  (label "DALI_BUFF_2Y" (at 172.72 101.6 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid ac1b7741-9b91-4a36-b889-92f0d6c40d61)
+  )
+  (label "DALI_-" (at 379.73 116.84 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid d27787a4-95f2-4d3e-86f9-ac5075355fc1)
+  )
+  (label "DALI_BUFF_1Y" (at 81.28 99.06 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid ff0424f5-e960-4b59-b8c9-0e54a815f5e3)
+  )
+
+  (hierarchical_label "+3V3_1" (shape passive) (at 125.73 104.14 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 0884587f-f1b6-4e29-b241-1c365170433a)
+  )
+  (hierarchical_label "DALI_RX" (shape output) (at 25.4 99.06 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 21ec9f48-fbbe-40ca-a15a-fbe06388c0e6)
+  )
+  (hierarchical_label "DALI_TX" (shape input) (at 25.4 101.6 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 25886f74-05c0-408c-aa26-c653a929bfff)
+  )
+  (hierarchical_label "+3V3_1" (shape passive) (at 198.12 127 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid 2b776445-00d6-4cf8-9728-815786063077)
+  )
+  (hierarchical_label "+3V3_1" (shape passive) (at 60.96 104.14 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid ec65272c-0d5b-41cd-8854-4893cbe752f5)
+  )
+  (hierarchical_label "+3V3_1" (shape passive) (at 199.39 67.31 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid f76e7a22-29d5-441c-a85c-6c9395b684d3)
+  )
+
+  (symbol (lib_id "power:GND1") (at 208.28 104.14 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 07c648cc-2aa6-4b69-ab79-f0702de9f69b)
+    (property "Reference" "#PWR0903" (at 208.28 110.49 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND1" (at 208.28 107.95 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 208.28 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 208.28 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid a9d27a97-3bdc-446b-b7e9-1457167473b3))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "#PWR0903") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND1") (at 138.43 120.65 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 099691de-c3d9-4996-93c8-7b152803bd37)
+    (property "Reference" "#PWR0902" (at 138.43 127 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND1" (at 138.43 124.46 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 138.43 120.65 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 138.43 120.65 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 5e90431a-d162-4878-81fe-0bb5d51c2dcf))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "#PWR0902") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:RES_3K3R_1/20W") (at 201.93 82.55 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 1f479933-f87b-4bae-93bb-e04a8c9f904e)
+    (property "Reference" "R903" (at 204.47 73.025 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "3K3R_1/20W" (at 204.47 75.565 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 182.88 64.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.seielect.com/Catalog/SEI-RMCF_RMCP.pdf" (at 185.42 53.34 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "3.3 kOhms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 190.5 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "RMCF0201FT3K30" (at 180.34 72.39 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0201FT3K30/4439996" (at 187.96 31.75 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 204.47 78.105 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Package" "R0201" (at 204.47 80.645 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (pin "1" (uuid 5696a102-7fa4-445a-ab83-f7817146053f))
+    (pin "2" (uuid d37546f8-ac48-49f3-a9f5-834402f546f8))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "R903") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:TVS_SD22-01FTG") (at 335.28 109.22 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 258cf34a-5c21-4e28-b483-821ad81caea0)
+    (property "Reference" "D902" (at 339.09 97.79 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "SD22-01FTG" (at 339.09 100.33 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "Diode_SMD:D_SOD-323" (at 317.5 96.52 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sd22_datasheet.pdf.pdf" (at 320.04 45.72 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "35.5V (Typ) Clamp 27A (8/20µs) Ipp Tvs Diode Surface Mount SOD-323" (at 325.12 72.39 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "SD22-01FTG" (at 314.96 101.6 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/littelfuse-inc/SD22-01FTG/13532036" (at 322.58 67.31 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 339.09 102.87 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Package" "SOD-323" (at 339.09 105.41 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "VBR" "23V" (at 339.09 107.95 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (pin "1" (uuid 8cab29c0-56a0-41da-a463-8a14ec547b32))
+    (pin "2" (uuid fdeed83a-80ab-4f91-a224-68eb669c5f8c))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "D902") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:INVERTER_NC7WZ14P6X-L22347") (at 102.87 96.52 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 2ba0b6a6-1340-4a91-8bd1-0d644abfa2f8)
+    (property "Reference" "U901" (at 107.95 90.17 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "NC7WZ14P6X-L22347" (at 107.95 92.71 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6" (at 105.41 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Datasheet" "https://www.onsemi.com/pdf/datasheet/nc7wz14-d.pdf" (at 105.41 87.63 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Description" "Inverter IC 2 Channel Schmitt Trigger Input SC-70-6" (at 105.41 85.09 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Part Number" "NC7WZ14P6X-L22347" (at 105.41 77.47 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/onsemi/NC7WZ14P6X-L22347/16528780" (at 105.41 82.55 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 107.95 95.25 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid fdd0bf2a-c774-49a4-9aa8-79085f97b375))
+    (pin "2" (uuid b31e164c-e585-4d61-9820-b6f950c5710f))
+    (pin "3" (uuid e84d90f8-152e-4c0c-b459-1579f8f0cae9))
+    (pin "4" (uuid 4517ca5d-2472-40dd-840d-43847e0d4b1b))
+    (pin "5" (uuid be06a28b-ff5a-49fb-bcbc-a883e768e6c8))
+    (pin "6" (uuid 90e9d823-e87b-4ba0-9199-fd9c804f3e05))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "U901") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:RES_100R_1/20W") (at 52.07 101.6 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 2f8a2d14-a232-47f5-a0c9-4d861cfad221)
+    (property "Reference" "R47" (at 67.31 100.33 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100R_1/20W" (at 44.45 100.33 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 69.85 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.seielect.com/Catalog/SEI-RMCF_RMCP.pdf" (at 81.28 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "100 Ohms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 90.17 91.44 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "RMCF0201FT100R" (at 62.23 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0201FT100R/1714988" (at 102.87 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 33.02 100.33 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Package" "R0201" (at 73.66 100.33 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid b963293c-77ce-406f-a9f4-0cff20b55ced))
+    (pin "2" (uuid 9072ee5e-df5e-4f1e-9de7-00ee9c29cee8))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/60365cc6-91eb-43e9-b29a-46e1ebbfd4c7"
+          (reference "R47") (unit 1)
+        )
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "R902") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:FUSE_0805L010/24YR") (at 356.87 93.98 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 321835f0-ab6f-4627-8101-3a8490c8d766)
+    (property "Reference" "F901" (at 372.11 92.71 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "0805L010/24YR" (at 349.25 92.71 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Fuse:Fuse_0805_2012Metric" (at 372.11 76.2 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_0805l_datasheet.pdf.pdf" (at 415.29 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Polymeric PTC Resettable Fuse 24V 100 mA Ih Surface Mount 0805 (2012 Metric), Concave" (at 402.59 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "0805L010/24YR" (at 367.03 73.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/littelfuse-inc/0805L010-24YR/4556346" (at 400.05 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 373.38 95.25 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Ihold" "100 mA" (at 363.22 90.17 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Voltage Rated" "24 V" (at 361.95 87.63 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Package" "F0805" (at 354.33 95.25 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid ead748da-a93a-4248-b231-bc0abb0efbd5))
+    (pin "2" (uuid 517da87e-7ccd-411a-8edc-c8e49f04c9a1))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "F901") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND1") (at 82.55 120.65 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 32b7310e-ae2e-4864-8b75-28ae283efda3)
+    (property "Reference" "#PWR0901" (at 82.55 127 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND1" (at 82.55 124.46 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 82.55 120.65 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 82.55 120.65 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 7e04246d-0ae1-40bc-a7b6-c5974a5fd42b))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "#PWR0901") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:RES_4K7R_1W") (at 271.78 93.98 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 382daaa2-3efd-4ad7-97e8-711ad66430b0)
+    (property "Reference" "R906" (at 285.75 92.71 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "4K7R_1W" (at 266.7 92.71 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_MELF_MMB-0207" (at 290.83 74.93 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.seielect.com/catalog/sei-mlfa.pdf" (at 298.45 77.47 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "4.7 kOhms ±1% 1W Chip Resistor MELF, 0207 Automotive AEC-Q200 Metal Film" (at 313.69 82.55 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "MLFA1FTC4K70" (at 281.94 72.39 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/MLFA1FTC4K70/8571818" (at 321.31 80.01 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 288.29 95.25 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Package" "MELF" (at 269.24 95.25 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid 764badc5-bee6-4d9a-98c1-f715bdb5e6b3))
+    (pin "2" (uuid a16b2c89-ecf8-4ab6-a085-2626f8663858))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "R906") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:BUFF_SN74LVC2G17DRYR") (at 157.48 96.52 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 46530ce1-1ac3-4f9b-9c63-f916e6411052)
+    (property "Reference" "U902" (at 162.56 90.17 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SN74LVC2G17DRYR" (at 162.56 92.71 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "_PCBLIB_SparkleSplashy:6-SON" (at 160.02 80.01 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc2g17" (at 160.02 85.09 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Description" "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output 6-SON (1.45x1)" (at 160.02 87.63 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Part Number" "SN74LVC2G17DRYR" (at 160.02 77.47 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/texas-instruments/SN74LVC2G17DRYR/3587226" (at 160.02 82.55 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "SCH CHECK" "CHECK" (at 162.56 95.25 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid 4fc9216c-d695-4720-b025-87fd0dcb7bc2))
+    (pin "2" (uuid 87bfc899-3db7-4e86-be9e-826ae67ffda8))
+    (pin "3" (uuid fa1cc6bb-32bd-4dd0-941b-2260d6b40d7d))
+    (pin "4" (uuid 376394cd-aca4-4c21-8c20-41d4885c68ef))
+    (pin "5" (uuid 14343ee3-d307-4ef7-915a-a49a0a67d8f1))
+    (pin "6" (uuid 52725e41-f74b-4a6b-ab82-b3f25404c525))
+    (pin "1" (uuid 4fc9216c-d695-4720-b025-87fd0dcb7bc2))
+    (pin "2" (uuid 87bfc899-3db7-4e86-be9e-826ae67ffda8))
+    (pin "3" (uuid fa1cc6bb-32bd-4dd0-941b-2260d6b40d7d))
+    (pin "4" (uuid 376394cd-aca4-4c21-8c20-41d4885c68ef))
+    (pin "5" (uuid 14343ee3-d307-4ef7-915a-a49a0a67d8f1))
+    (pin "6" (uuid 52725e41-f74b-4a6b-ab82-b3f25404c525))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "U902") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:RES_100R_1/20W") (at 52.07 99.06 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 46592643-5e0f-4941-9eac-14fac6ee76e5)
+    (property "Reference" "R47" (at 67.31 97.79 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100R_1/20W" (at 44.45 97.79 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 69.85 81.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.seielect.com/Catalog/SEI-RMCF_RMCP.pdf" (at 81.28 83.82 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "100 Ohms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 90.17 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "RMCF0201FT100R" (at 62.23 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0201FT100R/1714988" (at 102.87 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 33.02 97.79 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Package" "R0201" (at 73.66 97.79 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid 9dbbbab1-e744-4612-99cc-8efe1d420054))
+    (pin "2" (uuid 423588f2-34a7-4566-a875-435147857da0))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/60365cc6-91eb-43e9-b29a-46e1ebbfd4c7"
+          (reference "R47") (unit 1)
+        )
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "R901") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:TVS_SD22-01FTG") (at 335.28 118.11 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 468b7cb6-938e-4d62-bf24-f9fc73fca726)
+    (property "Reference" "D903" (at 339.09 120.65 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "SD22-01FTG" (at 339.09 123.19 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Diode_SMD:D_SOD-323" (at 353.06 130.81 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sd22_datasheet.pdf.pdf" (at 350.52 181.61 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "35.5V (Typ) Clamp 27A (8/20µs) Ipp Tvs Diode Surface Mount SOD-323" (at 345.44 154.94 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "SD22-01FTG" (at 355.6 125.73 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/littelfuse-inc/SD22-01FTG/13532036" (at 347.98 160.02 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 339.09 125.73 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Package" "SOD-323" (at 339.09 128.27 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "VBR" "23V" (at 339.09 130.81 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (pin "1" (uuid bc8dc09e-8e37-4127-9602-9104b37fc14e))
+    (pin "2" (uuid dbb53187-95b0-4b3c-b652-86cb5009c56a))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "D903") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:IC_VO207AT") (at 241.3 91.44 0) (mirror y) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 82af4480-36db-4d7e-b921-56374a241edb)
+    (property "Reference" "U904" (at 234.95 85.09 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "VO207AT" (at 234.95 87.63 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 238.76 76.2 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Datasheet" "https://www.vishay.com/docs/81957/vo205at.pdf" (at 238.76 78.74 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Description" "Optoisolator Transistor with Base Output 4000Vrms 1 Channel 8-SOIC" (at 238.76 81.28 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Part Number" "VO207AT" (at 238.76 73.66 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/vishay-semiconductor-opto-division/VO207AT/4073985" (at 238.76 83.82 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "SCH CHECK" "*" (at 234.95 90.17 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid c0d3ec8f-04cd-41da-94e3-ceb853ca1018))
+    (pin "2" (uuid 781c64b5-ed3d-47f5-b038-71f23b8e5b40))
+    (pin "3" (uuid 3bff9901-1bd4-4a20-8166-4005c3192640))
+    (pin "4" (uuid 39417238-7435-438d-9160-fd0c0c84e505))
+    (pin "5" (uuid e91be2e7-475a-425d-865c-7e8bbd7f336b))
+    (pin "6" (uuid 4499d7c4-aae9-491c-9f36-a600ae373238))
+    (pin "7" (uuid dfcd1af7-f8f4-48f6-87d2-c3b80e9eff4d))
+    (pin "8" (uuid b6bc31df-7f49-4979-8dbd-016b9f7c1f87))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "U904") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:CAP_2u2F/6V3") (at 82.55 105.41 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 96302d14-b648-4b9e-bf11-6d508ff16054)
+    (property "Reference" "C901" (at 85.09 108.585 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "2u2F/6V3" (at 85.09 111.125 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0201_0603Metric" (at 100.33 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://ele.kyocera.com/assets/products/capacitor/CM_Series_e.pdf" (at 95.25 142.24 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "2.2 µF ±20% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)" (at 97.79 138.43 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "CM03X5R225M06AH" (at 102.87 116.84 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/kyocera-avx/CM03X5R225M06AH/10815044" (at 92.71 151.13 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 85.09 113.665 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Package" "C0201" (at 85.09 116.205 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (pin "1" (uuid fa9e675d-cf03-4cfd-9f15-1b0a57eb67f6))
+    (pin "2" (uuid c51e0832-9341-41cb-8a80-7a5faa544f8d))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "C901") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:RES_3K3R_1/20W") (at 220.98 82.55 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 992d4163-dc8e-47ea-b76d-ac1b7dfe9d4a)
+    (property "Reference" "R905" (at 223.52 73.025 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "3K3R_1/20W" (at 223.52 75.565 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 201.93 64.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.seielect.com/Catalog/SEI-RMCF_RMCP.pdf" (at 204.47 53.34 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "3.3 kOhms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film" (at 209.55 43.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "RMCF0201FT3K30" (at 199.39 72.39 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/stackpole-electronics-inc/RMCF0201FT3K30/4439996" (at 207.01 31.75 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 223.52 78.105 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Package" "R0201" (at 223.52 80.645 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (pin "1" (uuid 5d369cd6-3d6f-4c88-b05c-2a810d0c8d27))
+    (pin "2" (uuid 21d37bcc-616c-4898-9e86-f68453f66397))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "R905") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:Earth") (at 363.22 115.57 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid baa0b7ed-c98e-41e4-9925-dd230057ac78)
+    (property "Reference" "#PWR0904" (at 363.22 121.92 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "Earth" (at 363.22 119.38 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "" (at 363.22 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 363.22 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 6db01b71-7df7-463b-b7e3-c06be89ed3e9))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "#PWR0904") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:CAP_2u2F/6V3") (at 138.43 105.41 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid bc355128-0729-4c94-8818-54d4937c3680)
+    (property "Reference" "C902" (at 140.97 108.585 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "2u2F/6V3" (at 140.97 111.125 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0201_0603Metric" (at 156.21 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://ele.kyocera.com/assets/products/capacitor/CM_Series_e.pdf" (at 151.13 142.24 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "2.2 µF ±20% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)" (at 153.67 138.43 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "CM03X5R225M06AH" (at 158.75 116.84 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/kyocera-avx/CM03X5R225M06AH/10815044" (at 148.59 151.13 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 140.97 113.665 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Package" "C0201" (at 140.97 116.205 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (pin "1" (uuid aee77c4a-e926-422f-8a2b-daa5a10c4098))
+    (pin "2" (uuid 02b8c62b-8002-44a4-88c8-08b555e1150c))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "C902") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:SCR_TISP4025H1BJR-S") (at 311.15 119.38 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid bdc927d5-dbab-42b9-8395-5dbfed980def)
+    (property "Reference" "D901" (at 313.69 108.585 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "TISP4025H1BJR-S" (at 313.69 111.125 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "Diode_SMD:D_SMB" (at 293.37 107.95 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.bourns.com/data/global/pdfs/TISP40xxH1BJ.pdf" (at 300.99 86.36 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "13V Off-State 400 A Ipp TVS Thyristor DO-214AA, SMB" (at 295.91 88.9 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "TISP4025H1BJR-S" (at 290.83 106.68 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/bourns-inc/TISP4025H1BJR-S/5816300" (at 298.45 74.93 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 313.69 113.665 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Voltage Off State" "13 V" (at 313.69 116.205 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Package" "SMB" (at 313.69 118.745 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (pin "1" (uuid abbeccac-ebca-4ae8-a5b8-6de0d73cdeb6))
+    (pin "2" (uuid 148cb57d-fa47-4903-8a4b-26cb3cdcc19f))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "D901") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:CONN_BD080-03-A-0230-L-G") (at 398.78 119.38 180) (unit 1)
+    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid bf2a95a7-b0c0-4fd6-ab9e-357d6c3a1c59)
+    (property "Reference" "J901" (at 400.05 112.395 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "FHDR_3POS_1.27MM" (at 400.05 114.935 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical" (at 394.97 135.89 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Datasheet" "https://gct.co/files/specs/1.27mm-socket-spec.pdf" (at 394.97 133.35 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Description" "3 Position Receptacle Connector 0.050\" (1.27mm) Through Hole Gold" (at 394.97 128.27 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Part Number" "BD080-03-A-0230-L-G" (at 394.97 138.43 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/gct/BD080-03-A-0230-L-G/13901350" (at 394.97 130.81 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 400.05 117.475 0)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (pin "1" (uuid aef87e86-013c-4667-adaf-be36725adae3))
+    (pin "2" (uuid b62362f3-b324-4d3b-a232-7fd27648f6d6))
+    (pin "3" (uuid 8c8fb323-7567-4036-904e-75604b310d8d))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "J901") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:SSR_AQY212EHA") (at 228.6 140.97 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid c5b0c3f8-c3af-4a8c-9409-891cbcc214e0)
+    (property "Reference" "U903" (at 234.95 134.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "AQY212EHA" (at 234.95 137.16 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Package_DIP:SMDIP-4_W7.62mm" (at 246.38 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www3.panasonic.biz/ac/e_download/control/relay/photomos/catalog/semi_eng_ge1a_aqy21_e.pdf" (at 281.94 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Solid State SPST-NO (1 Form A) 4-SMD (0.300\", 7.62mm)" (at 259.08 127 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "AQY212EHA" (at 236.22 121.92 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/panasonic-electric-works/AQY212EHA/512406" (at 274.32 129.54 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 234.95 139.7 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid 2b38b16c-46c4-44e0-919a-4dfa9626b09c))
+    (pin "2" (uuid 9711fefe-6d04-4fa5-875f-7e6054fbad83))
+    (pin "3" (uuid 95d4f2d9-f628-480e-b4a8-82cdeeab7634))
+    (pin "4" (uuid 14d0d62a-8819-4b9e-a38e-cdeab2ed656b))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "U903") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:FUSE_0805L010/24YR") (at 356.87 135.89 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid ccbf0a9b-227b-4e4a-aeea-92ab0b688bb7)
+    (property "Reference" "F902" (at 372.11 134.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "0805L010/24YR" (at 349.25 134.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Fuse:Fuse_0805_2012Metric" (at 372.11 118.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_0805l_datasheet.pdf.pdf" (at 415.29 123.19 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Polymeric PTC Resettable Fuse 24V 100 mA Ih Surface Mount 0805 (2012 Metric), Concave" (at 402.59 125.73 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "0805L010/24YR" (at 367.03 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/littelfuse-inc/0805L010-24YR/4556346" (at 400.05 120.65 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 373.38 137.16 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Ihold" "100 mA" (at 363.22 132.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Voltage Rated" "24 V" (at 361.95 129.54 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Package" "F0805" (at 354.33 137.16 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (pin "1" (uuid ef99ffc1-c6d6-46cc-bb55-9beec36001fa))
+    (pin "2" (uuid 8f956505-4c44-4544-b778-d2e928ab1186))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "F902") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "_SCHLIB_SparkleSplashy:RES_820R_1/20W") (at 201.93 142.24 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid ea55ab40-2f92-4c69-a31b-c9a9518bafa8)
+    (property "Reference" "R904" (at 204.47 132.715 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Value" "820R_1/20W" (at 204.47 135.255 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "Resistor_SMD:R_0201_0603Metric" (at 184.15 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" (at 191.77 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "820 Ohms ±1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film" (at 189.23 92.71 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Part Number" "ERJ-1GNF8200C" (at 181.61 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Link" "https://www.digikey.ca/en/products/detail/panasonic-electronic-components/ERJ-1GNF8200C/2036102" (at 186.69 87.63 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "SCH CHECK" "CHECKED" (at 204.47 137.795 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Package" "R0201" (at 204.47 140.335 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (pin "1" (uuid 8608bc90-379b-4a95-9b0b-49fe0a1560a6))
+    (pin "2" (uuid 9d1c4e01-48fb-4fa0-9cc6-954162ad2e17))
+    (instances
+      (project "_HW_SparkleSplashy"
+        (path "/3563f9c3-f402-4e4b-b984-95ffb75f7393/7401279e-f519-41b2-8b51-2e6732a63b3f/35839b0d-da2e-4bdf-826b-25d0ad3a37a6"
+          (reference "R904") (unit 1)
+        )
+      )
+    )
+  )
+)

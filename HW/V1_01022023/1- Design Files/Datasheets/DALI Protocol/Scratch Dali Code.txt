@@ -1,0 +1,1371 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+
+#define	BAUD_4800		20
+#define	BAUD_2400		413
+#define	BAUD_1200		833
+
+#define	START_TIMER		'S'
+#define	CAP_TIMER_RES	'C'
+
+#define	START_CAPTURE	'S'
+#define	READ_TIMER		'R'
+
+#define	RESPONSE_TIME_OVER		15000 //15 milliseconds.
+
+
+/*		ADDRESS BYTE				*/
+#define	SHORT_ADDRESS						0X00
+#define	GROUP_ADDRESS						0X80
+#define	BROADCAST_UNADDRESSED				0XFC	// one usage of this command is finding un-addressed Control gears. very useful :D.
+#define	BROADCAST							0XFE
+#define	CMD									0X01	//Bit 0 =’ 1 ’ : standard command;
+#define	DAPC								0X00	//Bit 0 =’ 0 ’ : direct arc power control (DAPC) command;
+
+
+/*		OUTPUT LEVEL INSTRUCTIONS	*/
+#define	OFF									0X00	//Switches off lamp(s)
+#define	UP									0X01	//Increases lamp(s) illumination level
+#define	DOWN								0X02	//Decreases lamp(s) illumination level
+#define	STEP_UP								0X03	//Increases the target illumination level by 1
+#define	STEP_DOWN							0X04	//Decreases the target illumination level by 1
+#define	RECALL_MAX_LEVEL					0X05	//Changes the current light output to the maximum level
+#define	RECALL_MIN_LEVEL					0X06	//Changes the current light output to the minimum level
+#define	STEP_DOWN_AND_OFF					0X07	//If the target level is zero, lamp(s) are turned off; if the target level is between the min. and max. levels, decrease the target level by one; if the target level is max., lamp(s) are turned off
+#define	ON_AND_STEP_UP						0X08	//If the target level is zero, lamp(s) are set to minimum level; if target level is between min. and max. levels, increase the target level by one
+#define	ENABLE_DAPC_SEQUENCE				0X09	//Indicates the start of DAPC (level) commands
+#define	GO_TO_LAST_ACTIVE_LEVEL				0X0A	//Sets the target level to the last active output level
+#define	GO_TO_SCENE							0X10	//Sets a group of lamps to a predefined scene
+/*		CONFIGURATION INSTRUCTIONS	*/
+#define	DALI_RESET							0X20	//Configures all variables back to their Reset state
+#define	STORE_ACTUAL_LEVEL_IN_DTR0			0X21	//Stores the actual level value into Data Transfer Register 0 (DTR0)
+#define	SAVE_PERSISTENT_VARIABLES			0X22	//Stores all variables into Nonvolatile Memory (NVM)
+#define	SET_OPERATING_MODE_DTR0				0X23	//Sets the operating mode to the value listed in DTR0
+#define	RESET_MEMORY_BANK_DTR0				0X24	//Resets the memory bank identified by DTR0 (memory bank must be implemented and unlocked)
+#define	IDENTIFY_DEVICE						0X25	//Instructs a control gear to run an identification procedure
+#define	SET_MAX_LEVEL_DTR0					0X2A	//Configures the control gear's maximum output level to the value stored in DTR0
+#define	SET_MIN_LEVEL_DTR0					0X2B	//Configures the control gear's minimum output level to the value stored in DTR0
+#define	SET_SYSTEM_FAILURE_LEVEL_DTR0		0X2C	//Sets the control gear's output level in the event of a system failure to the value stored in DTR0
+#define	SET_POWER_ON_LEVEL_DTR0				0X2D	//Configures the output level upon power-up based on the value of DTR0
+#define	SET_FADE_TIME_DTR0					0X2E	//Sets the fade time based on the value of DTR0
+#define	SET_FADE_RATE_DTR0					0X2F	//Sets the fade rate based on the value of DTR0
+#define	SET_EXTENDED_FADE_TIME_DTR0			0X30	//Sets the extended fade rate based on the value of DTR0; used when fade time = 0
+#define	SET_SCENE							0X40	//Configures scene 'x' based on the value of DTR0
+#define	REMOVE_FROM_SCENE					0X50	//Removes one of the control gears from a scene
+#define	ADD_TO_GROUP						0X60	//Adds a control gear to a group
+#define	REMOVE_FROM_GROUP					0X70	//Removes a control gear from a group
+#define	SET_SHORT_ADDRESS_DTR0				0X80	//Sets a control gear's short address to the value of DTR0
+#define	ENABLE_WRITE_MEMORY					0X81	//Allows writing into memory banks
+/*		QUERY INSTRUCTIONS		*/
+#define	QUERY_STATUS						0X90	//Determines the control gear's status based on a combination of gear properties
+#define	QUERY_CONTROL_GEAR_PRESENT			0X91	//Determines if a control gear is present
+#define	QUERY_LAMP_FAILURE					0X92	//Determines if a lamp has failed
+#define	QUERY_LAMP_POWER_ON					0X93	//Determines if a lamp is On
+#define	QUERY_LIMIT_ERROR					0X94	//Determines if the requested target level has been modified due to max. or min. level limitations
+#define	QUERY_RESET_STATE					0X95	//Determines if all NVM variables are in their Reset state
+#define	QUERY_MISSING_SHORT_ADDRESS			0X96	//Determines if a control gear's address is equal to 0xFF
+#define	QUERY_VERSION_NUMBER				0X97	//Returns the device's version number located in memory bank 0, location 0x16
+#define	QUERY_CONTENT_DTR0					0X98	//Returns the value of DTR0
+#define	QUERY_DEVICE_TYPE					0X99	//Determines the device type supported by the control gear
+#define	QUERY_PHYSICAL_MINIMUM				0X9A	//Returns the minimum light output that the control gear can operate at
+#define	QUERY_POWER_FAILURE					0X9B	//Determines if an external power cycle occurred
+#define	QUERY_CONTENT_DTR1					0X9C	//Returns the value of DTR1
+#define	QUERY_CONTENT_DTR2					0X9D	//Returns the value of DTR2
+#define	QUERY_OPERATING_MODE				0X9E	//Determines the control gear's operating mode
+#define	QUERY_LIGHT_SOURCE_TYPE				0X9F	//Returns the control gear's type of light source
+#define	QUERY_ACTUAL_LEVEL					0XA0	//Returns the control gear's actual power output level
+#define	QUERY_MAX_LEVEL						0XA1	//Returns the control gear's maximum output setting
+#define	QUERY_MIN_LEVEL						0XA2	//Returns the control gear's minimum output setting
+#define	QUERY_POWER_ON_LEVEL				0XA3	//Returns the value of the intensity level upon power-up
+#define	QUERY_SYSTEM_FAILURE_LEVEL			0XA4	//Returns the value of the intensity level due to a system failure
+#define	QUERY_FADE_TIME_FADE_RATE			0XA5	//Returns a byte in which the upper nibble is equal to the fade time value and the lower nibble is the fade rate value
+#define	QUERY_MANUFACTURER_SPECIFIC_MODE	0XA6	//Returns a 'YES' when the operating mode is within the range of 0x80 - 0xFF
+#define	QUERY_NEXT_DEVICE_TYPE				0XA7	//Determines if the control gear has more than one feature, and if so, return the first/next device type or feature
+#define	QUERY_EXTENDED_FADE_TIME			0XA8	//Returns a byte in which bits 6-4 is the value of the extended fade time multiplier and the lower nibble is the extended fade time base
+#define	QUERY_CONTROL_GEAR_FAILURE			0XAA	//Determines if a control gear has failed
+#define	QUERY_SCENE_LEVEL					0XB0	//Returns the level value of scene 'x'
+#define	QUERY_GROUPS_0_7					0XC0	//Returns a byte in which each bit represents a member of a group. A '1' represents a member of the group
+#define	QUERY_GROPUS_8_15					0XC1	//Returns a byte in which each bit represents a member of a group. A '1' represents a member of the group
+#define	QUERY_RANDOM_ADDRESS_H				0XC2	//Returns the upper byte of a randomly generated address
+#define	QUERY_RANDOM_ADDRESS_M				0XC3	//Returns the high byte of a randomly generated address
+#define	QUERY_RANDOM_ADDRESS_L				0XC4	//Returns the low byte of a randomly generated address
+#define	READ_MEMORY_LOCATION				0XC5	//Returns the content of the memory location stored in DTR0 that is located within the memory bank listed in DTR1
+#define	QUERY_EXTENDED_VERSION_NUMBER		0XFF	//Returns the version number belonging to the device type or feature
+/*			SPECIAL COMMANDS		*/
+#define	TERMINATE							0XA1	//Stops the control gear's initilization
+#define	DTR0_DATA							0XA3	//Loads a data byte into DTR0
+#define	INITIALISE							0XA5	//Initializes a control gear, command must be issued twice
+#define	RANDOMISE							0XA7	//Generates a random address value, command must be issued twice
+#define	COMPARE								0XA9	//Compares the random address variable to the search address variable
+#define	WITHDRAW							0XAB	//Changes the initialization state to reflect that a control gear had been identified but remains in the initialization state
+#define	PING								0XAD	//Used by control devices to indicate theirm presence on the bus
+#define	SEARCH_ADDR_H						0XB1	//Determines if an address is present on the bus
+#define	SEARCH_ADDR_M						0XB3	//Determines if an address is present on the bus
+#define	SEARCH_ADDR_L						0XB5	//Determines if an address is present on the bus
+#define	PROGRAM_SHORT_ADDRESS				0XB7	//Programs a control gear's short address
+#define	VERIFY_SHORT_ADDRESS				0XB9	//Verifies if a control gear's short address is correct
+#define	QUERY_SHORT_ADDRESS					0XBB	//Queries a control gear's short address
+#define	ENABLE_DEVICE_TYPE					0XC1	//Enables a control gear's device type function
+#define	DTR1_DATA							0XC3	//Loads a data byte into DTR1
+#define	DTR2_DATA							0XC5	//Loads a data byte into DTR2
+#define	WRITE_MEMORY_LOCATION				0XC7	//Writes data into a specific memory location and returns the value of the data written
+#define	WRITE_MEMORY_LOCATION_NO_REPLY		0XC9	//Writes data into a specific memory location but does not return a response
+
+/*		STATUS BIT DEFINITION		*/
+/*
+ * Each control gear shall expose its status
+ * as a combination of device properties as given down here.
+ * RETURN " 1 " = "YES"
+ */
+#define	STATUS_CONTROL_GEAR_FAILURE			(1 << 0)
+#define	LAMP_FAILURE						(1 << 1)
+#define	LAMP_ON								(1 << 2)
+#define	LIMIT_ERROR							(1 << 3)
+#define	FADE_RUNNING						(1 << 4)
+#define	RESET_STATE							(1 << 5)
+#define	SHORT_ADDR							(1 << 6)
+#define	POWER_CYCLE_SEEN					(1 << 7)
+
+#define	DELAY								500
+
+#define	EOL									'\r'
+#define	NO_MATCH							0XFF	//0XFF will be ignored, so it's a reset value.
+#define	DISPLAY_ERROR						"\r\n\nThe Given Command Is Wrong\r\n\n	**	TRY AGAIN	**\r\n\n"
+#define	DATA_VALUE							91		//it's the values that sent in ASCII format.
+#define	CMD_BUFF_SIZE						91
+#define	AT_CMD_BUFF_SIZE					64
+#define	NUMBER_OF_QUERY_TRIES				100
+#define	BAUDRATE_TOLERANCE					125
+#define	VALID_EDGE							0Xffffffff
+
+#define	UNSTABLE_LEVEL						0XAA
+#define	HIGH_LEVEL							0XA0
+#define	LOW_LEVEL							0X0A
+
+void _init_PCLK( void );
+void _init_GPIOA( void );
+void _init_GPIOC( void );
+void _init_TIMER4( void );
+void _init_TIMER3( void );
+void DelayUs( volatile uint32_t uSecond );
+void SendDataOnDALI( uint8_t addr, uint8_t data );
+
+uint8_t SendQueryToCtrlGear( uint8_t query, uint8_t addr);
+
+uint16_t CaptureTime( uint8_t cmd );
+uint8_t ReceiveDataFromDALI( void );
+
+void _init_UART( void );
+void SendDataOnUART( volatile char *p_data );
+uint8_t ReceiveDataFromUART( void );
+void UartToDaliConverter( void );
+uint8_t AtCommandExplainer( void );
+uint8_t ReturnEquivalentHEXValue(volatile char *p_data );
+void SendDataOnDALI_16bit( uint8_t addr, uint8_t cmd, uint8_t data);
+//void AssigningShortAddr( void );
+void AssignShortAddress( void );
+void DeleteShortAddress( void );
+
+static char atCommandTable[CMD_BUFF_SIZE][2][AT_CMD_BUFF_SIZE] = {
+		/*			OUTPUT LEVEL INSTRUCTIONS			*/
+		{{"OFF\r"								},{	0X00}},	//0
+		{{"UP\r"								},{	0X01}},	//1
+		{{"DOWN\r"								},{	0X02}},	//2
+		{{"STEP_UP\r"							},{	0X03}},	//3
+		{{"STEP_DOWN\r"							},{	0X04}},	//4
+		{{"RECALL_MAX_LEVEL\r"					},{	0X05}},	//5
+		{{"RECALL_MIN_LEVEL\r"					},{	0X06}},	//6
+		{{"STEP_DOWN_AND_OFF\r"					},{	0X07}},	//7
+		{{"ON_AND_STEP_UP\r"					},{	0X08}},	//8
+		{{"ENABLE_DAPC_SEQUENCE\r"				},{	0X09}},	//9
+		{{"GO_TO_LAST_ACTIVE_LEVEL\r"			},{	0X0A}},	//10
+		{{"GO_TO_SCENE\r"						},{	0X10}},	//11
+		/*			CONFIGURATION INSTRUCTIONS			*/
+		{{"DALI_RESET\r"						},{	0X20}},	//12
+		{{"STORE_ACTUAL_LEVEL_IN_DTR0\r"		},{	0X21}},	//13
+		{{"SAVE_PERSISTENT_VARIABLES\r"			},{	0X22}},	//14
+		{{"SET_OPERATING_MODE_DTR0\r"			},{	0X23}},	//15
+		{{"RESET_MEMORY_BANK_DTR0\r"			},{	0X24}},	//16
+		{{"IDENTIFY_DEVICE\r"					},{	0X25}},	//17
+		{{"SET_MAX_LEVEL_DTR0\r"				},{	0X2A}},	//18
+		{{"SET_MIN_LEVEL_DTR0\r"				},{	0X2B}},	//19
+		{{"SET_SYSTEM_FAILURE_LEVEL_DTR0\r"		},{	0X2C}},	//20
+		{{"SET_POWER_ON_LEVEL_DTR0\r"			},{	0X2D}},	//21
+		{{"SET_FADE_TIME_DTR0\r"				},{	0X2E}},	//22
+		{{"SET_FADE_RATE_DTR0\r"				},{	0X2F}},	//23
+		{{"SET_EXTENDED_FADE_TIME_DTR0\r"		},{	0X30}},	//24
+		{{"SET_SCENE\r"							},{	0X40}},	//25
+		{{"REMOVE_FROM_SCENE\r"					},{	0X50}},	//26
+		{{"ADD_TO_GROUP\r"						},{	0X60}},	//27
+		{{"REMOVE_FROM_GROUP\r"					},{	0X70}},	//28
+		{{"SET_SHORT_ADDRESS_DTR0\r"			},{	0X80}},	//29
+		{{"ENABLE_WRITE_MEMORY\r"				},{	0X81}},	//30
+		/*			QUERY COMMANDS						*/
+		{{"QUERY_STATUS\r"						},{	0X90}},	//31
+		{{"QUERY_CONTROL_GEAR_PRESENT\r"		},{	0X91}},
+		{{"QUERY_LAMP_FAILURE\r"				},{	0X92}},
+		{{"QUERY_LAMP_POWER_ON\r"				},{	0X93}},
+		{{"QUERY_LIMIT_ERROR\r"					},{	0X94}},
+		{{"QUERY_RESET_STATE\r"					},{	0X95}},
+		{{"QUERY_MISSING_SHORT_ADDRESS\r"		},{	0X96}},
+		{{"QUERY_VERSION_NUMBER\r"				},{	0X97}},
+		{{"QUERY_CONTENT_DTR0\r"				},{	0X98}},
+		{{"QUERY_DEVICE_TYPE\r"					},{	0X99}},
+		{{"QUERY_PHYSICAL_MINIMUM\r"			},{	0X9A}},
+		{{"QUERY_POWER_FAILURE\r"				},{	0X9B}},
+		{{"QUERY_CONTENT_DTR1\r"				},{	0X9C}},
+		{{"QUERY_CONTENT_DTR2\r"				},{	0X9D}},
+		{{"QUERY_OPERATING_MODE\r"				},{	0X9E}},
+		{{"QUERY_LIGHT_SOURCE_TYPE\r"			},{	0X9F}},
+		{{"QUERY_ACTUAL_LEVEL\r"				},{	0XA0}},
+		{{"QUERY_MAX_LEVEL\r"					},{	0XA1}},
+		{{"QUERY_MIN_LEVEL\r"					},{	0XA2}},
+		{{"QUERY_POWER_ON_LEVEL\r"				},{	0XA3}},
+		{{"QUERY_SYSTEM_FAILURE_LEVEL\r"		},{	0XA4}},
+		{{"QUERY_FADE_TIME_FADE_RATE\r"			},{	0XA5}},
+		{{"QUERY_MANUFACTURER_SPECIFIC_MODE\r"	},{	0XA6}},
+		{{"QUERY_NEXT_DEVICE_TYPE\r"			},{	0XA7}},
+		{{"QUERY_EXTENDED_FADE_TIME\r"			},{	0XA8}},
+		{{"QUERY_CONTROL_GEAR_FAILURE\r"		},{	0XAA}},
+		{{"QUERY_SCENE_LEVEL\r"					},{	0XB0}},
+		{{"QUERY_GROUPS_0_7\r"					},{	0XC0}},
+		{{"QUERY_GROPUS_8_15\r"					},{	0XC1}},
+		{{"QUERY_RANDOM_ADDRESS_H\r"			},{	0XC2}},
+		{{"QUERY_RANDOM_ADDRESS_M\r"			},{	0XC3}},
+		{{"QUERY_RANDOM_ADDRESS_L\r"			},{	0XC4}},
+		{{"READ_MEMORY_LOCATION\r"				},{	0XC5}},
+		{{"QUERY_EXTENDED_VERSION_NUMBER\r"		},{	0XFF}},	//64
+		/*			SPECIAL COMMANDS					*/
+		{{"TERMINATE\r"							},{	0XA1}},	//65
+		{{"DTR0_DATA\r"							},{	0XA3}},	//66
+		{{"INITIALISE\r"						},{	0XA5}},	//67
+		{{"RANDOMISE\r"							},{	0XA7}}, //68
+		{{"COMPARE\r"							},{	0XA9}}, //69
+		{{"WITHDRAW\r"							},{	0XAB}}, //70
+		{{"PING\r"								},{	0XAD}}, //71
+		{{"SEARCH_ADDR_H\r"						},{	0XB1}}, //72
+		{{"SEARCH_ADDR_M\r"						},{	0XB3}}, //73
+		{{"SEARCH_ADDR_L\r"						},{	0XB5}}, //74
+		{{"PROGRAM_SHORT_ADDRESS\r"				},{	0XB7}}, //75
+		{{"VERIFY_SHORT_ADDRESS\r"				},{	0XB9}}, //76
+		{{"QUERY_SHORT_ADDRESS\r"				},{	0XBB}}, //77
+		{{"ENABLE_DEVICE_TYPE\r"				},{	0XC1}}, //78
+		{{"DTR1_DATA\r"							},{	0XC3}}, //79
+		{{"DTR2_DATA\r"							},{	0XC5}}, //80
+		{{"WRITE_MEMORY_LOCATION\r"				},{	0XC7}}, //81
+		{{"WRITE_MEMORY_LOCATION_NO_REPLY\r"	},{	0XC9}},	//82
+		/*												*/
+		{{"CMD\r"								},{	0X01}},	//83
+		{{"DAPC\r"								},{	0X00}},	//84
+		/*			ADDRESS TYPE						*/
+		{{"BROADCAST_UNADDRESSED\r"				},{	0XFC}},	//85
+		{{"BROADCAST\r"							},{	0XFE}},	//86
+		{{"GROUP_ADDRESS\r"						},{	0X80}},	//87
+		{{"SHORT_ADDRESS\r"						},{	0X00}},	//88
+		{{"SET_SHORT_ADDRESS\r"					},{	0XEE}},	//89	//I added this command, it's not standard command.
+		{{"DEL_SHORT_ADDRESS\r"					},{	0XDD}}	//90	//I added this command, it's not standard command.
+};
+
+uint8_t commandAddr = NO_MATCH;	//this variable uses to find what kinda command it's. if it's between 31 and 64 it says that it's kinda of query.
+uint8_t uartRxFlag = 0X00;
+uint8_t daliRxFlag = 0X00;
+
+int main(void){
+	_init_PCLK();
+	_init_GPIOA();
+	_init_TIMER4();
+	_init_TIMER3();
+	_init_GPIOC();
+	_init_UART();
+
+	GPIOC->BSRR = GPIO_BSRR_BR13;
+	DelayUs(500000);
+	GPIOC->BSRR = GPIO_BSRR_BS13;
+	DelayUs(500000);
+	GPIOC->BSRR = GPIO_BSRR_BR13;
+	DelayUs(500000);
+	GPIOC->BSRR = GPIO_BSRR_BS13;
+	DelayUs(500000);
+	GPIOC->BSRR = GPIO_BSRR_BR13;
+	DelayUs(500000);
+	SendDataOnUART("Hello, Welcome To DALI Control Gear\r\n\n");
+
+	while(1){
+		UartToDaliConverter();
+	}
+
+}
+
+void _init_PCLK( void ){
+	//waiting for HSI clock to be stabilized.
+	while((RCC->CR & (RCC_CR_HSIRDY)) == 0);
+	//set the PLL multiplication factor by 6. so the frequency will be 24MHz
+	RCC->CFGR |= RCC_CFGR_PLLMULL6;
+	//Turn the PLL on
+	RCC->CR |= RCC_CR_PLLON;
+	//Waiting that PLL get lock
+	while((RCC->CR & (RCC_CR_PLLRDY)) == 0);
+	//Set the PLL as system clock source
+	RCC->CFGR |= RCC_CFGR_SW_1;
+}
+void _init_GPIOC( void ){
+	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
+	GPIOC->CRH |= GPIO_CRH_MODE13_0;
+}
+void _init_GPIOA( void ){
+	//Enable GPIOA clock
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+	//Set pinA.1 as output with normal speed
+	GPIOA->CRL |= GPIO_CRL_MODE1_0;
+	//Set pinA.1 high
+	GPIOA->BSRR = GPIO_BSRR_BS1;
+}
+
+/********************************************
+ * 			UART Functions					*
+ ********************************************/
+void _init_UART( void ){
+	//Enable GPIOA clock
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+
+	//Configure GPIOA.9 = TX and GPIOA.10 = RX as alternate function for UART
+	GPIOA->CRH |= GPIO_CRH_MODE9_0 | GPIO_CRH_CNF9_1;// | GPIO_CRH_MODE10_0 | GPIO_CRH_CNF10_1;
+
+	//Enable UART clock
+	RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+
+	//Configure USART as RX and TX asynchronous
+	USART1->CR1 |= USART_CR1_TE | USART_CR1_RE;
+	//with 9600 baud rate.
+	USART1->BRR = (156 << 4) | (25);
+	//with 115200 baud rate.
+	//USART1->BRR = (13 << 4) | (2);
+	USART1->CR1 |= USART_CR1_UE;
+
+}
+void SendDataOnUART(volatile char *p_data ){
+	while(*p_data){
+		//check if the USART_ register is empty
+		while((USART1->SR & USART_SR_TXE) == 0);
+		//send data by loading UDR register with data
+		USART1->DR = *p_data;
+		//wait till the transmission completes.
+		while((USART1->SR & USART_SR_TC) == 0);
+		//increase pointer address by 1.
+		p_data++;
+	}
+}
+uint8_t ReceiveDataFromUART( void ){
+	volatile uint8_t newData = 0X00;
+	//check if we have received any new data for 10 miliSeconds.
+	for(uint32_t counter = 0; counter < 65000; ++counter){
+		if(USART1->SR & USART_SR_RXNE){
+			newData =  USART1->DR;
+			uartRxFlag = 1;
+			break;
+		}
+		DelayUs(10);
+	}
+	//return received data, if there is no new data, it'll return 0.
+	return newData;
+}
+
+/********************************************
+ * 			DALI Functions					*
+ ********************************************/
+uint8_t ReturnEquivalentHEXValue(volatile char *p_data ){
+	uint32_t pointerAddr = (uint32_t)p_data;
+	volatile uint8_t hexValue = 0X00;
+	//reset commandAddr for removing bugs.
+	commandAddr = NO_MATCH;
+	//converting ASCII number up to 3 digit to hex value.
+	if((*p_data >= '0') && (*p_data <= '9')){
+		//3 digit values 100-254
+		if(*(p_data + 3) == EOL){
+			hexValue = (*p_data - '0') * 100;
+			hexValue += ((*(p_data + 1) - '0') * 10);
+			hexValue += (*(p_data + 2) - '0');
+		}
+		//2 digit values 10-99
+		else if(*(p_data + 2) == EOL){
+			hexValue = (*p_data - '0') * 10;
+			hexValue += (*(p_data + 1) - '0');
+		}
+		//values from 0-9
+		else{
+			hexValue = (*p_data - '0');
+		}
+		commandAddr = DATA_VALUE;
+		return hexValue;
+	}
+	else if(((*p_data >= 'a') && (*p_data <= 'z')) || ((*p_data >= 'A') && (*p_data <= 'Z'))){
+		for(uint8_t counter = 0; counter < CMD_BUFF_SIZE; ++counter){
+			p_data = pointerAddr;
+			for(uint8_t i = 0; i < AT_CMD_BUFF_SIZE; ++i){
+				if( (*p_data == EOL) && (atCommandTable[counter][0][i] == EOL) ){
+					commandAddr = counter;
+					return atCommandTable[counter][1][0];
+				}
+				//ignoring case sensitivity.
+				//			checking upper case from 'A' to 'Z'				checking lower case from 'a' to 'z'
+				else if((atCommandTable[counter][0][i] != *p_data) && ((atCommandTable[counter][0][i] + 32) != *p_data)){
+					break;
+				}
+				p_data++;
+			}
+		}
+	}
+	return NO_MATCH;
+}
+uint8_t AtCommandExplainer( void ){
+	volatile char data[AT_CMD_BUFF_SIZE] = {0};
+	volatile char tempVar = 0X00;
+	uint8_t counter = 0;
+	for(counter = 0; counter < AT_CMD_BUFF_SIZE; ++counter){
+		tempVar = 0X00;
+		while(tempVar == 0X00){
+			tempVar = ReceiveDataFromUART();
+		}
+		data[counter] = tempVar;
+		if(data[counter] == EOL){
+			break;
+		}
+	}
+	if(data[counter] != EOL){
+		return NO_MATCH;
+	}
+	SendDataOnUART( data );
+	SendDataOnUART("\r\n\n");
+	return ReturnEquivalentHEXValue( data );
+}
+uint8_t GetSlaveAddress( void ){
+	volatile uint8_t slaveAddr = 0XFF;
+	volatile uint8_t tempVar = 0X00;
+	SendDataOnUART("Now Select Slave Address Type: ");
+	slaveAddr = AtCommandExplainer();
+	if( (commandAddr < 85) || (slaveAddr == NO_MATCH) ){
+		return NO_MATCH;
+	}
+	if(slaveAddr == SHORT_ADDRESS){
+		SendDataOnUART("Select a specific slave (Send a number in ASCII between 0-63): ");
+		tempVar = AtCommandExplainer();
+		if(tempVar > 63){
+			return NO_MATCH;
+		}
+		slaveAddr |= (tempVar << 1);
+		// the slave address must be like 0b0AAAAAA0.
+		slaveAddr &= 0X7E;
+	}
+	else if(slaveAddr == GROUP_ADDRESS){
+		SendDataOnUART("Select a group of slaves (Send a number in ASCII between 0-15): ");
+		tempVar = AtCommandExplainer();
+		if(tempVar > 15){
+			return NO_MATCH;
+		}
+		slaveAddr |= (tempVar << 1);
+		// the slave address must be like 0b100AAAA0.
+		slaveAddr &= 0b10011110;
+	}
+	else if(slaveAddr == BROADCAST_UNADDRESSED){
+		SendDataOnUART("Un-addressed slaves will execute the instruction.\r\n\n");
+	}
+	else if((slaveAddr == BROADCAST)){
+		SendDataOnUART("All slaves will execute the instruction.\r\n\n");
+	}
+	else{
+		return NO_MATCH;
+	}
+	return slaveAddr;
+}
+void PrintHexValueOnUART( uint8_t value ){
+	volatile char printValue[] = "  \r\n\n";
+	//volatile char printValue[] = "   - ";
+	//converting value to ASCII value for printing on serial terminal.
+	printValue[0] = ((value >> 4) & 0X0F) + '0';
+	//it's for demo of A to F numbers in Hex.
+	if(printValue[0] > '9'){
+		printValue[0] += 7;
+	}
+	printValue[1] = (value & 0X0F) + '0';
+	//it's for demo of A to F numbers in Hex.
+	if(printValue[1] > '9'){
+		printValue[1] += 7;
+	}
+	SendDataOnUART( printValue );
+}
+void PrintDecValueOnUART( uint16_t value ){
+	volatile char printValue[] = "    \r\n\n";
+	//converting value to ASCII value for printing on serial terminal.
+	printValue[0] = (value / 1000) + '0';
+	printValue[1] = ((value % 1000) / 100) + '0';
+	printValue[2] = ((value % 100) / 10) + '0';
+	printValue[3] = (value % 10) + '0';
+	SendDataOnUART( printValue );
+}
+
+void ExecuteOutputLevelInestruction( uint8_t instruction ){
+	volatile uint8_t slaveAddr = NO_MATCH;
+	SendDataOnUART("Selected instruction is an output level instruction\r\n\n");
+	//I'll get address type, also specific address number in case of group or short address selection.
+	slaveAddr = GetSlaveAddress();
+	if(slaveAddr == NO_MATCH){
+		SendDataOnUART(DISPLAY_ERROR);
+		return;
+	}
+	//there is no response from slaves after executing this type of instructions.
+	//now we send what we've got from the user to DALI slaves.
+	SendDataOnDALI( (CMD | slaveAddr) , instruction);
+	SendDataOnUART("INSTRUCTION HAS BEEN SENT SUCCESSFULLY\r\n\n");
+}
+void ExecuteConfigurationInstruction( uint8_t instruction ){
+	volatile uint8_t slaveAddr = NO_MATCH;
+	SendDataOnUART("Selected instruction is a configuration instruction\r\n\n");
+	//I'll get address type, also specific address number in case of group or short address selection.
+	slaveAddr = GetSlaveAddress();
+	if(slaveAddr == NO_MATCH){
+		SendDataOnUART(DISPLAY_ERROR);
+		return;
+	}
+	//for executing the instruction, it must be sent twice.
+	SendDataOnDALI( (CMD | slaveAddr) , instruction);
+	SendDataOnDALI( (CMD | slaveAddr) , instruction);
+	//there is no response from slaves after executing these types of instructions.
+	SendDataOnUART("INSTRUCTION HAS BEEN SENT SUCCESSFULLY\r\n\n");
+}
+void ExecuteQueryCommands( uint8_t command ){
+	volatile uint8_t slaveAddr = NO_MATCH;
+	volatile uint8_t backwardFrame = 0X00;
+	SendDataOnUART("Selected command is a query command\r\n\n");
+	//I'll get address type, also specific address number in case of group or short address selection.
+	slaveAddr = GetSlaveAddress();
+	//only one slave must be asked for a query, GROUP ADDRESS, BROADCAST OR BROADCAST_UNADDRESSED WILL BE INGNORED.
+	if((slaveAddr == NO_MATCH) || (slaveAddr & 0X80)){
+		SendDataOnUART("\r\n\nInvalid Input Value (YOU MUST SELECT A SPECIFIC SLAVE)\r\n\n	**	TRY AGAIN	**\r\n\n");
+		return;
+	}
+	//there is a response from slave/s after executing these types of commands.
+	//make sure you'll get a response from them.
+	for(uint8_t counter = 0; counter < NUMBER_OF_QUERY_TRIES; ++counter){
+		SendDataOnDALI( (CMD | slaveAddr) , command);
+		daliRxFlag = 0;
+		backwardFrame = ReceiveDataFromDALI();
+		if(daliRxFlag != 0X00){
+			break;
+		}
+		//DelayUs(50000);
+		DelayUs(500000);
+	}
+	//in case of no response or error in response, we'll show there is no response.
+	if(daliRxFlag == 0X00){
+		SendDataOnUART("There is no response from DALI slave\r\n\n");
+		return;
+	}
+	SendDataOnUART(" Here is what slave says: 0X");
+	PrintHexValueOnUART( backwardFrame );
+}
+void ExecuteSpecialCommands( uint8_t command ){
+	volatile uint8_t opCode = NO_MATCH;
+	volatile uint8_t backwardFrame = 0X00;
+	SendDataOnUART("Selected command is a special command\r\n\n");
+	//Special address will be executed on all the slaves. so we don't need to get any address.
+	//These commands' opcode are 0x00 so we don't need to get anymore data.
+	if((command == TERMINATE) || (command == RANDOMISE) || (command == COMPARE) || (command == WITHDRAW) || (command == PING) || (command == QUERY_SHORT_ADDRESS)){
+		opCode = 0X00;
+		if(command == RANDOMISE){
+			//this command needs to be done twice
+			SendDataOnDALI( command, opCode);
+			SendDataOnDALI( command, opCode);
+			SendDataOnUART("RANDOMISE HAS BEEN SENT SUCCESSFULLY\r\n\n");
+			return;
+		}
+	}
+	else if(command == INITIALISE){
+		opCode = GetSlaveAddress();
+		/*
+		 * The format is as followed
+		 * 0AAAAAA1b == Device(s) with “shortAddress” equal to 00AAAAAAb
+		 * 11111111b == Control gear without “shortAddress” shall react
+		 * 00000000b == All control gear shall react
+		 *
+		 */
+		if(opCode == BROADCAST){
+			opCode = 0X00;
+		}
+		else if(opCode == BROADCAST_UNADDRESSED){
+			opCode = 0XFF;
+		}
+		else if(opCode & (GROUP_ADDRESS | 0b00011110)){
+			SendDataOnUART("\r\n\nInvalid Input Value (YOU CAN NOT SELECT GROUP ADDRESS)\r\n\n	**	TRY AGAIN	**\r\n\n");
+			return;
+		}
+		else{
+			//the return short address will be sorted in the get address function. we just need to add a 0X01.
+			opCode |= 0X01;
+		}
+		//this command needs to be done twice, initialize command will be active on slave for 15minute from the time it has been activated.
+		SendDataOnDALI( command, opCode);
+		SendDataOnDALI( command, opCode);
+		SendDataOnUART("INITIALISATION HAS BEEN SENT SUCCESSFULLY\r\n\n");
+		return;
+	}
+	else{
+		SendDataOnUART("Now type a value (Send a number between 0-254): ");
+		opCode = AtCommandExplainer();
+		if( opCode == NO_MATCH ){
+			SendDataOnUART(DISPLAY_ERROR);
+			return;
+		}
+	}
+	if((command == COMPARE) || (command == VERIFY_SHORT_ADDRESS) || (command == QUERY_SHORT_ADDRESS) || (command == WRITE_MEMORY_LOCATION)){
+		//there is a response from slave/s after executing these types of commands.
+		//make sure you'll get a response from them.
+		for(uint8_t counter = 0; counter < NUMBER_OF_QUERY_TRIES; ++counter){
+			SendDataOnDALI( command, opCode);
+			daliRxFlag = 0;
+			backwardFrame = ReceiveDataFromDALI();
+			if(daliRxFlag != 0X00){
+				break;
+			}
+			DelayUs(50000);
+		}
+		//in case of no response or error in response, we'll show there is no response.
+		if(daliRxFlag == 0X00){
+			SendDataOnUART("There is no response from DALI slave\r\n\n");
+			return;
+		}
+		SendDataOnUART(" Here is what slave says: 0X");
+		PrintHexValueOnUART( backwardFrame );
+	}
+	else{
+		//now we'll send the command once here but for other kind that needs to be sent twice, it'll be done on their if statement.
+		SendDataOnDALI( command, opCode);
+		SendDataOnUART("COMMAND HAS BEEN SENT SUCCESSFULLY\r\n\n");
+	}
+}
+void SetDAPCValue( void ){
+	volatile uint8_t slaveAddr = NO_MATCH;
+	volatile uint8_t dapcValue = NO_MATCH;
+	SendDataOnUART("You are about to change Direct Arc Power Control\r\n\n");
+	//I'll get address type, also specific address number in case of group or short address selection.
+	slaveAddr = GetSlaveAddress();
+	if(slaveAddr == NO_MATCH){
+		SendDataOnUART(DISPLAY_ERROR);
+		return;
+	}
+	//Here we'll get the output power that is a number between 0-254.
+	SendDataOnUART("Now type a value (Send a number between 0-254): ");
+	dapcValue = AtCommandExplainer();
+	if(dapcValue == NO_MATCH){
+		SendDataOnUART(DISPLAY_ERROR);
+		return;
+	}
+	//now we send what we've got from the user to DALI slaves.
+	SendDataOnDALI( slaveAddr, dapcValue);
+	SendDataOnUART("Enjoy the new output brightness\r\n\n");
+}
+
+void UartToDaliConverter( void ){
+	volatile uint8_t tempVar = 0X00;
+	//getting command or direct arc power control with address values from user
+	SendDataOnUART("Choose CMD/DAPC or A Special Command: ");
+	tempVar = AtCommandExplainer();
+	/*			OUTPUT LEVEL INSTRUCTIONS			*/
+	if((commandAddr >= 0) && (commandAddr < 12)){
+		ExecuteOutputLevelInestruction( tempVar );
+	}
+	/*			CONFIGURATION INSTRUCTIONS			*/
+	else if((commandAddr > 11) && (commandAddr < 31)){
+		ExecuteConfigurationInstruction( tempVar );
+	}
+	/*			QUERY COMMANDS						*/
+	else if((commandAddr > 30) && (commandAddr < 65)){
+		ExecuteQueryCommands( tempVar );
+	}
+	/*			SPECIAL COMMANDS					*/
+	else if((commandAddr > 64) && (commandAddr < 83)){
+		ExecuteSpecialCommands( tempVar );
+	}
+	/*			DAPC Value							*/
+	else if(commandAddr == 84){
+		SetDAPCValue();
+	}
+	else{
+		//Any misspelled command or wrong command will be discarded.
+		SendDataOnUART(DISPLAY_ERROR);
+	}
+	DelayUs(1000000);
+}
+
+/*
+ * 	PREVIOUS CODE
+ *
+ *
+	void AssigningShortAddr( void ){
+	volatile uint8_t shortAddr = 0X00;
+	volatile uint8_t tempVar = 0;
+	volatile char printValue[6] = { 0, 0, '\r', '\n', '\n', 0};
+	struct{
+		volatile uint8_t hh;
+		volatile uint8_t mm;
+		volatile uint8_t ll;
+	}randomAddress;
+	SendDataOnUART("Now Type The Desired Address Number (Send in HEX/DEC (0-63)): ");
+	uartRxFlag = 0X00;
+	while(uartRxFlag == 0X00){
+		shortAddr = ReceiveDataFromUART();
+	}
+	printValue[0] = (shortAddr / 10) + '0';
+	printValue[1] = (shortAddr % 10) + '0';
+	SendDataOnUART( printValue );
+	//Before anything we must get the random addresses (H - M - L)
+	*SendDataOnUART("ASKING FOR RANDOM ADDRESS H\r\n");
+	SendDataOnDALI( (CMD | BROADCAST_UNADDRESSED) , QUERY_RANDOM_ADDRESS_H);
+	daliRxFlag = 0;
+	tempVar = ReceiveDataFromDALI();
+	if(daliRxFlag == 0X00){
+		DelayUs(50000);
+		for(uint8_t counter = 0; counter < 50; ++counter){
+			SendDataOnDALI( (CMD | BROADCAST) , QUERY_RANDOM_ADDRESS_H );
+			tempVar = ReceiveDataFromDALI();
+			if(daliRxFlag != 0X00){
+				break;
+			}
+			DelayUs(50000);
+		}
+		if(daliRxFlag == 0X00){
+			SendDataOnUART("RANDOM ADDRESS H DIDN'T RECEIVE\r\n\n");
+			return;
+		}
+	}
+	randomAddress.hh = tempVar;
+	SendDataOnUART("ASKING FOR RANDOM ADDRESS M\r\n");
+	SendDataOnDALI( (CMD | BROADCAST) , QUERY_RANDOM_ADDRESS_M);
+	daliRxFlag = 0;
+	tempVar = ReceiveDataFromDALI();
+	if(daliRxFlag == 0X00){
+		DelayUs(50000);
+		for(uint8_t counter = 0; counter < 50; ++counter){
+			SendDataOnDALI( (CMD | BROADCAST) , QUERY_RANDOM_ADDRESS_M );
+			tempVar = ReceiveDataFromDALI();
+			if(daliRxFlag != 0X00){
+				break;
+			}
+			DelayUs(50000);
+		}
+		if(daliRxFlag == 0X00){
+			SendDataOnUART("RANDOM ADDRESS M DIDN'T RECEIVE\r\n\n");
+			return;
+		}
+	}
+	randomAddress.mm = tempVar;
+	SendDataOnUART("ASKING FOR RANDOM ADDRESS L\r\n");
+	SendDataOnDALI( (CMD | BROADCAST) , QUERY_RANDOM_ADDRESS_L);
+	daliRxFlag = 0;
+	tempVar = ReceiveDataFromDALI();
+	if(daliRxFlag == 0X00){
+		DelayUs(50000);
+		for(uint8_t counter = 0; counter < 50; ++counter){
+			SendDataOnDALI( (CMD | BROADCAST) , QUERY_RANDOM_ADDRESS_L );
+			tempVar = ReceiveDataFromDALI();
+			if(daliRxFlag != 0X00){
+				break;
+			}
+			DelayUs(50000);
+		}
+		if(daliRxFlag == 0X00){
+			SendDataOnUART("RANDOM ADDRESS L DIDN'T RECEIVE\r\n\n");
+			return;
+		}
+	}
+	randomAddress.ll = tempVar;
+
+	//“initialisationState” is equal to ENABLED or WITHDRAWN, and
+	//initialisation must execute two times.
+	SendDataOnDALI( INITIALISE, 0X00);
+	SendDataOnDALI( INITIALISE, 0X00);
+	DelayUs(500000);
+	//“randomAddress” is equal to “searchAddress”
+	SendDataOnDALI( SEARCH_ADDR_H, randomAddress.hh );
+	DelayUs(50000);
+	SendDataOnDALI( SEARCH_ADDR_M, randomAddress.mm );
+	DelayUs(50000);
+	SendDataOnDALI( SEARCH_ADDR_L, randomAddress.ll );
+	DelayUs(50000);*
+	*
+	 *  If executed, “shortAddress” shal l be set as fol lows:
+	 *  if data = MASK: MASK (effectively deleting the short address)
+	 *  if data = 1 xxxxxxxb or xxxxxxx0b: no change
+	 *  in al l other cases (0AAAAAA1 b) : 00AAAAAAb.
+	 *
+	//trim the short address as it's said in reference document.
+	shortAddr = ((shortAddr << 1) & 0X7F) | 0X01;	//in all other cases (0AAAAAA1 b) : 00AAAAAAb.
+	//SendDataOnDALI( PROGRAM_SHORT_ADDRESS, shortAddr);
+	SendDataOnDALI( DTR0_DATA, shortAddr);
+	DelayUs(50000);
+	SendDataOnDALI( (CMD | BROADCAST), SET_SHORT_ADDRESS_DTR0);
+	SendDataOnDALI( (CMD | BROADCAST), SET_SHORT_ADDRESS_DTR0);
+	daliRxFlag = 0;
+	tempVar = ReceiveDataFromDALI();
+	if(daliRxFlag == 0X00){
+		SendDataOnUART("There is no response from DALI slave\r\n\n");
+		return;
+	}
+	printValue[0] = ((tempVar >> 4) & 0X0F) + '0';
+	//it's for demo of A to F numbers in Hex.
+	if(printValue[0] > '9'){
+		printValue[0] += 7;
+	}
+	printValue[1] = (tempVar & 0X0F) + '0';
+	//it's for demo of A to F numbers in Hex.
+	if(printValue[1] > '9'){
+		printValue[1] += 7;
+	}
+	SendDataOnUART(" Here is what Slave says: 0X");
+	SendDataOnUART( printValue );
+	return;
+}
+
+
+void AssignShortAddress( void ){
+	volatile uint8_t shortAddr = 0X00;
+	//volatile uint8_t tempVar = 0;
+	volatile char printValue[6] = { 0, 0, '\r', '\n', '\n', 0};
+	SendDataOnUART("Now Type The Desired Address Number (Send in HEX/DEC (0-63)): ");
+	uartRxFlag = 0X00;
+	while(uartRxFlag == 0X00){
+		shortAddr = ReceiveDataFromUART();
+	}
+	printValue[0] = (shortAddr / 10) + '0';
+	printValue[1] = (shortAddr % 10) + '0';
+	SendDataOnUART( printValue );
+	*
+	 *  If executed, “shortAddress” shall be set as follows:
+	 *  if data = MASK: MASK (effectively deleting the short address)
+	 *  if data = 1 xxxxxxxb or xxxxxxx0b: no change
+	 *  in al l other cases (0AAAAAA1 b) : 00AAAAAAb.
+	 *
+	//trim the short address as it's said in reference document.
+	shortAddr = ((shortAddr << 1) & 0X7F) | 0X01;
+	//first you need to put the address in DTR0 register
+	SendDataOnDALI( DTR0_DATA, shortAddr);
+	DelayUs(50000);
+	//second you must send twice the instruction that the data in DTR0 register be as a short address.
+	SendDataOnDALI( (CMD | BROADCAST), SET_SHORT_ADDRESS_DTR0);
+	SendDataOnDALI( (CMD | BROADCAST), SET_SHORT_ADDRESS_DTR0);
+	//now we should verify the address we just uploaded for the next step
+
+
+	//SendDataOnUART("The Address Has Been Successfully Assigned \r\n\n");
+	return;
+}
+
+
+void DeleteShortAddress( void ){
+	SendDataOnUART("Deleting The Short Address Is Under Process \r\n\n");
+	*
+	 *  If executed, “shortAddress” shall be set as follows:
+	 *  if data = MASK: MASK (effectively deleting the short address)
+	 *
+	//first you need to put the address in DTR0 register
+	SendDataOnDALI( DTR0_DATA, 0XFF);
+	DelayUs(50000);
+	//second you must send twice the instruction that the data in DTR0 register be as a short address.
+	SendDataOnDALI( (CMD | BROADCAST), SET_SHORT_ADDRESS_DTR0);
+	SendDataOnDALI( (CMD | BROADCAST), SET_SHORT_ADDRESS_DTR0);
+	//now we should verify the address we just deleted for the next step
+
+
+	//SendDataOnUART("The Address Has Been Successfully Deleted \r\n\n");
+	return;
+}
+
+	volatile char printValue[6] = {0,0,'\r','\n','\n',0};
+	volatile char dapcValue[7] = { 0, 0, 0, '\r', '\n', '\n', 0};
+	volatile uint8_t addr = 0X00;
+	volatile uint8_t cmd = 0X00;
+	volatile uint8_t value = 0X00;
+
+	if((tempVar == NO_MATCH) || (commandAddr < 65) || (commandAddr > 86)){
+		SendDataOnUART("\r\n\nThe Given Command Is Wrong\r\n\nTRY AGAIN\r\n\n");
+		return;
+	}
+	cmd = tempVar;
+	if(commandAddr == 85){
+		AssignShortAddress();
+		return;
+	}
+	else if(commandAddr == 86){
+		DeleteShortAddress();
+		return;
+	}
+	else if(commandAddr < 83){
+		SendDataOnUART("Now Type a Value For The Special Command (Send in HEX/DEC): ");
+		uartRxFlag = 0X00;
+		while(uartRxFlag == 0X00){
+			tempVar = ReceiveDataFromUART();
+		}
+		dapcValue[0] = (tempVar / 100) + '0';
+		dapcValue[1] = ((tempVar % 100) / 10) + '0';
+		dapcValue[2] = (tempVar % 10) + '0';
+		SendDataOnUART( dapcValue );
+		value = tempVar;
+		SendDataOnDALI( cmd, value);
+		daliRxFlag = 0;
+		tempVar = ReceiveDataFromDALI();
+		if(daliRxFlag == 0X00){
+			SendDataOnUART("There is no response from DALI slave\r\n\n");
+			return;
+		}
+		printValue[0] = ((tempVar >> 4) & 0X0F) + '0';
+		printValue[1] = (tempVar & 0X0F) + '0';
+		SendDataOnUART(" Here is what Slave says: 0X");
+		SendDataOnUART( printValue );
+		return;
+	}
+	SendDataOnUART("Now Select Address Type: ");
+	tempVar = AtCommandExplainer();
+	if( (tempVar == NO_MATCH)  || (commandAddr < 87) ){
+		SendDataOnUART("\r\n\nThe Given Address Type Is Wrong\r\n\nTRY AGAIN\r\n\n");
+		return;
+	}
+	addr = tempVar;
+	if((addr != BROADCAST) && (addr != BROADCAST_UNADDRESSED)){
+		if(addr == GROUP_ADDRESS){
+			SendDataOnUART("Selected Group is (Send in HEX/DEC): ");
+		}
+		else{
+			SendDataOnUART("The Individual Address is (Send in HEX/DEC): ");
+		}
+		uartRxFlag = 0;
+		while(uartRxFlag == 0X00){
+			tempVar = ReceiveDataFromUART();
+		}
+		printValue[0] = (tempVar / 10) + '0';
+		printValue[1] = (tempVar % 10) + '0';
+		SendDataOnUART( printValue );
+		//the address must shift to right one bit.
+		addr |= (tempVar << 1);
+	}
+	else if(addr == BROADCAST_UNADDRESSED){
+		SendDataOnUART("UN-ADDRESSED Slaves\r\n\n");
+	}
+	else{
+		SendDataOnUART("ALL Slaves\r\n\n");
+	}
+
+	//now we should get value or command.
+	if(cmd == DAPC){
+		SendDataOnUART("Now Type DAPC value (Send in HEX/DEC): ");
+		uartRxFlag = 0X00;
+		while(uartRxFlag == 0X00){
+			tempVar = ReceiveDataFromUART();
+		}
+		dapcValue[0] = (tempVar / 100) + '0';
+		dapcValue[1] = ((tempVar % 100) / 10) + '0';
+		dapcValue[2] = (tempVar % 10) + '0';
+		SendDataOnUART( dapcValue );
+		value = tempVar;
+	}
+	else{
+		SendDataOnUART("Now Type The Command: ");
+		tempVar = AtCommandExplainer();
+		if((tempVar == NO_MATCH) || (commandAddr > 82)){
+			SendDataOnUART("\r\n\nThe Given Command Is Wrong\r\n\nTRY AGAIN\r\n\n");
+			return;
+		}
+		value = tempVar;
+	}
+	//now we send what we've got from the user to DALI slaves.
+	SendDataOnDALI( (cmd | addr) , value);
+	daliRxFlag = 0;
+	tempVar = ReceiveDataFromDALI();
+	if(daliRxFlag == 0X00){
+		if((commandAddr >= 31) && (commandAddr <= 64)){
+			for(uint8_t counter = 0; counter < 50; ++counter){
+				SendDataOnDALI( (cmd | addr) , value);
+				tempVar = ReceiveDataFromDALI();
+				if(daliRxFlag != 0X00){
+					break;
+				}
+				DelayUs(50000);
+			}
+		}
+		else{
+			SendDataOnUART("There is no response from DALI slave\r\n\n");
+			return;
+		}
+	}
+	printValue[0] = ((tempVar >> 4) & 0X0F) + '0';
+	//it's for demo of A to F numbers in Hex.
+	if(printValue[0] > '9'){
+		printValue[0] += 7;
+	}
+	printValue[1] = (tempVar & 0X0F) + '0';
+	//it's for demo of A to F numbers in Hex.
+	if(printValue[1] > '9'){
+		printValue[1] += 7;
+	}
+	SendDataOnUART(" Here is what Slave says: 0X");
+	SendDataOnUART( printValue );
+ */
+
+/********************************************
+ * 			Sending Functions				*
+ ********************************************/
+void _init_TIMER4( void ){
+	//Enable timer clock
+	RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
+	//initialize timer registers for normal counting with 1 microseconds each overflow.
+	TIM4->PSC = 0;
+	TIM4->ARR = 10;
+	//start timer4
+	TIM4->CR1 |= TIM_CR1_CEN;
+}
+void DelayUs( volatile uint32_t uSecond ){
+	//clear the flag with writing 0 to it!
+	TIM4->SR = 0;
+	//Reseting timer 4 counter
+	TIM4->CNT = 0;
+	//waiting for
+	while(uSecond--){
+		//waiting for overflow flag
+		while((TIM4->SR & TIM_SR_UIF) == 0){
+			//just waiting :D
+		}
+		//clear the flag with writing 0 to it!
+		TIM4->SR = 0;
+	}
+}
+void SendDataOnDALI( uint8_t addr, uint8_t data ){
+	/*
+	 * the data string is like "start bit	16bits data 	stop bit	stop bit"
+	 * The MSB must be sent first.
+	 * Sending the start bit, it's a one, start bit is a one!!!!!!
+	 */
+	//reset the pin first
+	GPIOA->BSRR = GPIO_BSRR_BR1;
+	//delay about half of the 1200 BAUD RATE
+	DelayUs( BAUD_2400 );
+	//set the pin secondly
+	GPIOA->BSRR = GPIO_BSRR_BS1;
+	//delay about half of the 1200 BAUD RATE
+	DelayUs( BAUD_2400 );
+	//sending 8bits data
+	for(uint8_t counter = 0; counter < 8; ++counter){
+		if(addr & 0X80){
+			//The pin must be reset first
+			GPIOA->BSRR |= GPIO_BSRR_BR1;
+		}
+		else{
+			//The pin must be set first
+			GPIOA->BSRR |= GPIO_BSRR_BS1;
+		}
+		//delay about half of the 1200 BAUD RATE
+		DelayUs( BAUD_2400 );
+		if(addr & 0X80){
+			//The pin must be Set secondly
+			GPIOA->BSRR |= GPIO_BSRR_BS1;
+		}
+		else{
+			//The pin must be reset secondly
+			GPIOA->BSRR |= GPIO_BSRR_BR1;
+		}
+		//delay about half of the 1200 BAUD RATE
+		DelayUs( BAUD_2400 );
+		//Shift data to left
+		addr = (addr << 1);
+	}
+	//sending 8bits data
+	for(uint8_t counter = 0; counter < 8; ++counter){
+		if(data & 0X80){
+			//The pin must be reset first
+			GPIOA->BSRR |= GPIO_BSRR_BR1;
+		}
+		else{
+			//The pin must be set first
+			GPIOA->BSRR |= GPIO_BSRR_BS1;
+		}
+		//delay about half of the 1200 BAUD RATE
+		DelayUs( BAUD_2400 );
+		if(data & 0X80){
+			//The pin must be Set secondly
+			GPIOA->BSRR |= GPIO_BSRR_BS1;
+		}
+		else{
+			//The pin must be reset secondly
+			GPIOA->BSRR |= GPIO_BSRR_BR1;
+		}
+		//delay about half of the 1200 BAUD RATE
+		DelayUs( BAUD_2400 );
+		//Shift data to left
+		data = (data << 1);
+	}
+	//The pin must be Set lastly to release the line
+	GPIOA->BSRR |= GPIO_BSRR_BS1;
+	//sending stop bit
+	DelayUs( BAUD_1200 );
+	//sending stop bit
+	DelayUs( BAUD_1200 );
+}
+
+/********************************************
+ * 			Receiving Functions				*
+ ********************************************/
+void _init_TIMER3( void ){
+	//Enable timer clock
+	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
+	//initialize timer registers for normal counting with 1 microseconds each overflow.
+	TIM3->PSC = 23;
+	//start timer3
+	TIM3->CR1 |= TIM_CR1_CEN;
+}
+uint16_t CaptureTime( uint8_t cmd ){
+	if(cmd == START_CAPTURE){
+		//clear the flag with writing 0 to it!
+		TIM3->SR = 0;
+		//Reset the counter
+		TIM3->CNT = 0;
+		return 0;
+	}
+	return TIM3->CNT;
+}
+uint8_t SchmittTriggerInput( void ){
+	volatile static uint32_t inputSampler = 0X0000;
+	//it's a small delay like 625 nanoSeconds = 0.5uSeconds.
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	__asm__("nop");
+	//recording low levels
+	if((GPIOA->IDR & GPIO_IDR_IDR0) == 0){
+		inputSampler = (inputSampler << 1);
+	}
+	//recording high levels
+	else{
+		inputSampler = (inputSampler << 1);
+		inputSampler |= 0X01;
+	}
+	//defining levels
+	if(inputSampler == 0X00000000){
+		return LOW_LEVEL;
+	}
+	else if(inputSampler == 0XFFFFFFFF){
+		return HIGH_LEVEL;
+	}
+	return UNSTABLE_LEVEL;
+}
+uint8_t ReceiveDataFromDALI( void ){
+	volatile uint8_t backFrame = 0X00;
+	volatile uint16_t timeResponse = 0X0000;
+	//volatile uint32_t edgeValidator = 0;
+	/*
+	 * 	The control gear must begin to transmit the backward frame
+	 *	no sooner than 5.5 ms (approximately 14 half-bit times)
+	 *	and
+	 *	no later than 10.5 ms (approximately 25 half-bit periods).
+	 */
+	//waiting for a response for 15mSecond.
+	CaptureTime( START_CAPTURE );
+	//waiting for a falling edge
+	while(GPIOA->IDR & GPIO_IDR_IDR0){
+		if(CaptureTime( READ_TIMER ) > RESPONSE_TIME_OVER){
+			SendDataOnUART("NO RESPONSE - TIME OUT\r\n\n");
+			return 0;
+		}
+	}
+	CaptureTime( START_CAPTURE );
+	//waiting for rising edge. it's the first bit (start bit).
+	while((GPIOA->IDR & GPIO_IDR_IDR0) == 0){
+		timeResponse = CaptureTime( READ_TIMER );
+		if((timeResponse < (BAUD_2400 - BAUDRATE_TOLERANCE)) && (timeResponse > (BAUD_2400 + BAUDRATE_TOLERANCE))){
+			SendDataOnUART("NO RESPONSE - START BIT LOST\r\n\n");
+			return 0;
+		}
+	}
+	//Here we should start reading bits
+	//reading the length of zero level, we use it to assume the complete 1200 baud to see when the next bit will start.
+	//waiting for the rest of the bit to spent.
+	CaptureTime( START_CAPTURE );
+	//waiting for a falling edge.
+	while(GPIOA->IDR & GPIO_IDR_IDR0){
+		if(CaptureTime( READ_TIMER ) > (BAUD_1200 - timeResponse)){
+			break;
+		}
+	}
+	for(uint8_t counter = 0; counter < 8; ++counter){
+		//we start capturing data
+		CaptureTime( START_CAPTURE );
+		//if it's a zero bit, it'll start with 1.
+		if(GPIOA->IDR & GPIO_IDR_IDR0){
+			//waiting for a valid falling edge.
+			while(1){
+				if(SchmittTriggerInput() == LOW_LEVEL){
+					break;
+				}
+				//it's for any disconnection or any error.
+				timeResponse = CaptureTime( READ_TIMER );
+				//1000 means 1000 uSeconds.
+				if(timeResponse > 1000){
+					SendDataOnUART("NO RESPONSE - TIME OUT - 1\r\n\n");
+					PrintDecValueOnUART(timeResponse);
+					return 0;
+				}
+			}
+			/*
+			//waiting for a valid falling edge.
+			while(1){
+				//we must reset the validator variable
+				edgeValidator = 0;
+				//waiting for a falling edge.
+				while(GPIOA->IDR & GPIO_IDR_IDR0){
+					//it's for any disconnection or any error.
+					timeResponse = CaptureTime( READ_TIMER );
+					//1000 means 1000 uSeconds.
+					if(timeResponse > 1000){
+						SendDataOnUART("NO RESPONSE - TIME OUT - 0\r\n\n");
+						return 0;
+					}
+				}
+				break;
+			}
+			*/
+			//I assumed a tolerance of 35 percent.
+			if( (timeResponse > (BAUD_2400 - BAUDRATE_TOLERANCE)) && (timeResponse < (BAUD_2400 + BAUDRATE_TOLERANCE)) ){
+				//this if statement save the data from wrong data shift to left. the last bit must place in bit-0.
+				if(counter < 7){
+					backFrame = (backFrame << 1);
+				}
+			}
+			else{
+				//SendDataOnUART("NO RESPONSE - DATA LOST - 0\r\n\n");
+				SendDataOnUART("NO RESPONSE - DATA LOST - 0 - ");
+				PrintHexValueOnUART(counter);
+				//PrintDecValueOnUART( timeResponse );
+				return 0;
+			}
+			/*
+			//waiting for the rest of the bit to spent.
+			CaptureTime( START_CAPTURE );
+			while((GPIOA->IDR & GPIO_IDR_IDR0) == 0){
+				if(CaptureTime( READ_TIMER ) > (BAUD_1200 - timeResponse)){
+					break;
+				}
+			}
+			*/
+			//waiting for the rest of the bit to spent.
+			CaptureTime( START_CAPTURE );
+			//waiting for a valid rising edge or rest of bit.
+			while(1){
+				if(SchmittTriggerInput() == HIGH_LEVEL){
+					break;
+				}
+				//this if statement says the level will be kept high.
+				if(CaptureTime( READ_TIMER ) > (BAUD_1200 - timeResponse)){
+					break;
+				}
+			}
+		}
+		//waiting for a rising edge.
+		else if((GPIOA->IDR & GPIO_IDR_IDR0) == 0){
+			while(1){
+				if(SchmittTriggerInput() == HIGH_LEVEL){
+					break;
+				}
+				//it's for any disconnection or any error.
+				timeResponse = CaptureTime( READ_TIMER );
+				//1000 means 1000 uSeconds.
+				if(timeResponse > 1000){
+					SendDataOnUART("NO RESPONSE - TIME OUT - 1\r\n\n");
+					PrintDecValueOnUART(timeResponse);
+					return 0;
+				}
+			}
+			/*
+			//waiting for a rising edge.
+			while(1){
+				//we must reset the validator variable
+				edgeValidator = 0;
+				//waiting for a rising edge.
+				while((GPIOA->IDR & GPIO_IDR_IDR0) == 0){
+					//it's for any disconnection or any error.
+					timeResponse = CaptureTime( READ_TIMER );
+					//1000 means 1000 uSeconds.
+					if(timeResponse > 1000){
+						SendDataOnUART("NO RESPONSE - TIME OUT - 1\r\n\n");
+						PrintDecValueOnUART(timeResponse);
+						return 0;
+					}
+				}
+				break;
+			}
+			*/
+			//I assumed a tolerance of +/-35%.
+			if( (timeResponse > (BAUD_2400 - BAUDRATE_TOLERANCE)) && (timeResponse < (BAUD_2400 + BAUDRATE_TOLERANCE)) ){
+				backFrame |= 0X01;
+				//this if statement save the data from wrong data shift to left. the last bit must place in bit-0.
+				if(counter < 7){
+					backFrame = (backFrame << 1);
+				}
+			}
+			else{
+				//SendDataOnUART("NO RESPONSE - DATA LOST - 1\r\n\n");
+				SendDataOnUART("NO RESPONSE - DATA LOST - 1 - ");
+				PrintHexValueOnUART(counter);
+				PrintDecValueOnUART( timeResponse );
+				return 0;
+			}
+			/*
+			//waiting for the rest of the bit to spent.
+			CaptureTime( START_CAPTURE );
+			while(GPIOA->IDR & GPIO_IDR_IDR0){
+				if(CaptureTime( READ_TIMER ) > (BAUD_1200 - timeResponse)){
+					break;
+				}
+			}
+			*/
+			//waiting for the rest of the bit to spent.
+			CaptureTime( START_CAPTURE );
+			//waiting for a valid falling edge or rest of bit.
+			while(1){
+				if(SchmittTriggerInput() == LOW_LEVEL){
+					break;
+				}
+				//this if statement says the level will be kept high.
+				if(CaptureTime( READ_TIMER ) > (BAUD_1200 - timeResponse)){
+					break;
+				}
+			}
+		}
+	}
+	daliRxFlag = 1;
+	return backFrame;
+}
