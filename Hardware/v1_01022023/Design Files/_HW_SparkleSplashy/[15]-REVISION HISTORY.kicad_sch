@@ -1,0 +1,30 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid ce7bbb31-a5e5-4c61-a346-779950da8573)
+
+  (paper "C")
+
+  (title_block
+    (title "SparkleSplashy")
+    (date "2023-04-25")
+    (rev "01")
+    (company "Siavash Taher Parvar")
+    (comment 1 "Siavash Taher Parvar")
+    (comment 2 "Siavash Taher Parvar")
+    (comment 3 "Siavash Taher Parvar")
+    (comment 4 "_BOM_SpSp_V1.xlsx")
+    (comment 5 "_ASM_SpSp_V1.html")
+    (comment 6 "_GERBER_JLCPCB042023.zip")
+    (comment 8 "No Variant")
+    (comment 9 "N/A")
+  )
+
+  (lib_symbols
+  )
+
+
+  (text "UNCHECKED" (at 368.3 38.1 0)
+    (effects (font (size 5 5) bold) (justify left bottom))
+    (uuid 273c4c6d-1558-4c49-a580-be1af150933e)
+  )
+)
