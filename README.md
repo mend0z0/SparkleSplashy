@@ -51,20 +51,31 @@ Description...
 
 ## Block Diagrams
 
-[Block1](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
+![Block1](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
 
-[Block2](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
+![Block2](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
 
-[Block3](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
+![Block3](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
 
-
-## Screenshots
 
 ### Hardware
-![App Screenshot](https://github.com/mend0z0/OfficeDisplay/blob/main/Document/Screenshots/E-paper%20driver%20with%20PIC16F%20-%20Failed%20(20231010))
+
+#### 3D_View
+
+![3DView_Top_SparkleSplashy](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Hardware%20Screenshot/3D%20View/3DView_Top_SparkleSplashy.png)
+
+![3DView_Bottom_SparkleSplashy](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Hardware%20Screenshot/3D%20View/3DView_Bottom_SparkleSplashy.png)
+ 
+#### Assembled Hardware
+
+![Hardware_Top_SparkleSplashy](https://github.com/mend0z0/E-Stationer/blob/main/Document/Hardware%20Screenshot/Hardware/Hardware_Top_EPaper.png)
+
+![Hardware_Bottom_SparkleSplashy](https://github.com/mend0z0/E-Stationer/blob/main/Document/Hardware%20Screenshot/Hardware/Hardware_Bottom_EPaper.png)
+
 
 ### Application
-![App Screenshot](https://github.com/mend0z0/OfficeDisplay/blob/main/Document/Screenshots/E-paper%20driver%20with%20PIC16F%20-%20Failed%20(20231010))
+![App Screenshot](https://github.com/mend0z0/E-Stationer/blob/main/Document/Applicaiton%20Screenshot/Application-Page-First.png)
+
 
 
 
@@ -74,7 +85,7 @@ Insert gif or link to demo, it'll be my youtube channel
 
 ## LOGO
 
-![Logo](https://github.com/mend0z0/OfficeDisplay/blob/main/LOGO.png)
+![Logo](https://github.com/mend0z0/SparkleSplashy/blob/main/LOGO.png)
 
 
 ## Author
