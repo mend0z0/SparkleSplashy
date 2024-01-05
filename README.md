@@ -22,20 +22,20 @@ Description...
 
 ### Hardware
 
-- **MCU:**
-- **Connection:**
-- **PCB Layers:** xLayer/s (Controlled/None-controlled Impedance)
+- **MCU:** ATSAM4SD16BA
+- **Connection:** 
+- **PCB Layers:** 4Layers (None-controlled Impedance)
 - **CAD:** KiCAD
 
 ### Firmware
 
-- **OS:**
-- **Programming Language:**
-- **IDE:**
+- **OS:** FreeRTOS
+- **Programming Language:** C
+- **IDE:** Microchip Studio
 
 ### Application
 
-- **Application:**
+- **Application:** Qt6
 
 
 
