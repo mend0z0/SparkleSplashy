@@ -1,4 +1,3 @@
-
 ## Latest update
 
 
@@ -46,37 +45,40 @@ Description...
 
 ## WBS Chart
 
-![WBS Chart](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
+![WBS Chart](https://github.com/mend0z0)
 
 
 ## Block Diagrams
 
-![Block1](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
+![SystemDesign](https://github.com/mend0z0)
 
-![Block2](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
+![Hardware](https://github.com/mend0z0)
 
-![Block3](https://github.com/mend0z0/OfficeDisplay/tree/main/Document)
+![Firmware](https://github.com/mend0z0)
 
+
+## Screenshots
 
 ### Hardware
 
+#### CAD View
+
+![_CADView](https://github.com/mend0z0)
+
 #### 3D_View
 
-![3DView_Top_SparkleSplashy](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Hardware%20Screenshot/3D%20View/3DView_Top_SparkleSplashy.png)
+![_3DView_Top](https://github.com/mend0z0)
 
-![3DView_Bottom_SparkleSplashy](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Hardware%20Screenshot/3D%20View/3DView_Bottom_SparkleSplashy.png)
+![_3DView_Bottom](https://github.com/mend0z0)
  
 #### Assembled Hardware
 
-![Hardware_Top_SparkleSplashy](https://github.com/mend0z0/E-Stationer/blob/main/Document/Hardware%20Screenshot/Hardware/Hardware_Top_EPaper.png)
+![_ASMView_Top](https://github.com/mend0z0)
 
-![Hardware_Bottom_SparkleSplashy](https://github.com/mend0z0/E-Stationer/blob/main/Document/Hardware%20Screenshot/Hardware/Hardware_Bottom_EPaper.png)
-
+![_ASMView_Bottom](https://github.com/mend0z0)
 
 ### Application
-![App Screenshot](https://github.com/mend0z0/E-Stationer/blob/main/Document/Applicaiton%20Screenshot/Application-Page-First.png)
-
-
+![App Screenshot](https://github.com/mend0z0)
 
 
 ## Demo
@@ -85,7 +87,7 @@ Insert gif or link to demo, it'll be my youtube channel
 
 ## LOGO
 
-![Logo](https://github.com/mend0z0/SparkleSplashy/blob/main/LOGO.png)
+![Logo](https://github.com/mend0z0)
 
 
 ## Author
@@ -96,4 +98,3 @@ Insert gif or link to demo, it'll be my youtube channel
 ## Support
 
 [Support Link](https://github.com/sponsors/mend0z0)
-

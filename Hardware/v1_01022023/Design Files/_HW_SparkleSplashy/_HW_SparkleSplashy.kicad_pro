@@ -470,7 +470,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "_HW_SparkleSplashy.step",
       "vrml": ""
     },
     "page_layout_descr_file": "ANSI C Landscape_PCBDoc_Mend0z0.kicad_wks"
