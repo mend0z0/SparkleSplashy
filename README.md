@@ -63,13 +63,13 @@ Description...
 
 #### CAD View
 
-![_CADView](https://github.com/mend0z0)
+![_CADView](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Media%20Content/Hardware%20Pictures/CAD%20View/_CADView_SparkleSplashy_v1.0.svg)
 
 #### 3D_View
 
-![_3DView_Top](https://github.com/mend0z0)
+![_3DView_Top](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Media%20Content/Hardware%20Pictures/3D%20View/_3DView_Top_SparkleSplashy_v1.0.png)
 
-![_3DView_Bottom](https://github.com/mend0z0)
+![_3DView_Bottom](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Media%20Content/Hardware%20Pictures/3D%20View/_3DView_Bottom_SparkleSplashy_v1.0.png)
  
 #### Assembled Hardware
 
@@ -87,7 +87,7 @@ Insert gif or link to demo, it'll be my youtube channel
 
 ## LOGO
 
-![Logo](https://github.com/mend0z0)
+![Logo](https://github.com/mend0z0/SparkleSplashy/blob/main/LOGO.png)
 
 
 ## Author
