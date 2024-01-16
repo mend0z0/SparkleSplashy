@@ -10,6 +10,9 @@ Latest update, or process that is going through
 
 Description...
 
+## Category
+
+__Home/Office Automation__
 
 ## Features
 
