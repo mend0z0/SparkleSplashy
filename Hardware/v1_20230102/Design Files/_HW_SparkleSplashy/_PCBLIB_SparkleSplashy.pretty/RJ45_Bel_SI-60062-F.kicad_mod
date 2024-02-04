@@ -64,7 +64,7 @@
   (pad "SH" thru_hole circle (at -3.3 3.3) (size 2.6 2.6) (drill 1.6) (layers "*.Cu" "*.Mask") (tstamp d6cfd01a-5548-4bed-9977-c31684e2e31b))
   (pad "SH" thru_hole circle (at 12.19 3.3) (size 2.6 2.6) (drill 1.6) (layers "*.Cu" "*.Mask") (tstamp 11640119-44e3-489a-9f9d-64daa27a6015))
   (model "${KIPRJMOD}/3D Parts/User Library-HR911130A.step"
-    (offset (xyz -3.5 -17 12))
+    (offset (xyz -3.5 -17 13.5))
     (scale (xyz 1 1 1))
     (rotate (xyz 90 -180 -180))
   )
