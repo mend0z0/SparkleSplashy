@@ -38,7 +38,14 @@ __Home/Office Automation__
 
 ### Application
 
-- **Application:** Qt6
+- **IDE:** Qt6
+- **Operating System:** Linux/Windows
+- **Device:** Laptop
+
+### Mechanical
+
+- **CAD:** Solid Edge
+- **Printing Method:** 3D Printing
 
 
 ## Block Diagrams
