@@ -41,16 +41,6 @@ __Home/Office Automation__
 - **Application:** Qt6
 
 
-
-
-
-
-
-## WBS Chart
-
-![WBS Chart](https://github.com/mend0z0)
-
-
 ## Block Diagrams
 
 ![SystemDesign](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Block%20Diagrams/_FBD_SYS_SparkleSplashy_v1.0.svg)
