@@ -53,9 +53,9 @@ __Home/Office Automation__
 
 ## Block Diagrams
 
-![SystemDesign](https://github.com/mend0z0)
+![SystemDesign](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Block%20Diagrams/_FBD_SYS_SparkleSplashy_v1.0.svg)
 
-![Hardware](https://github.com/mend0z0)
+![Hardware](https://github.com/mend0z0/SparkleSplashy/blob/main/Document/Block%20Diagrams/_FBD_HW_SparkleSplashy_v1.0.svg)
 
 ![Firmware](https://github.com/mend0z0)
 
